@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bienvenidos al lado oscuro</title>
+  </head>
+  <body>
+    <!-- Solo un H1 por página -->
+
+    <h1>Soy un H1 y soy el título mas importante de la página</h1>
+    <h2>Esto es un H2</h2>
+    <h3>Esto es un H3</h3>
+    <h4>Esto es un H4</h4>
+    <h5>Esto es un H5</h5>
+    <h6>Esto es un H6</h6>
+
+    <p>Soy una etiqueta p y dentro mio vas a colocar párrafos</p>
+
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
+      dignissimos reiciendis <b>assumenda</b> molestiae, nesciunt magnam illum
+      iusto quis qui natus repudiandae, voluptatum nulla. Nemo ducimus et
+      voluptatem rerum neque, sunt, obcaecati reiciendis dolorem in autem optio
+      similique corporis deleniti numquam.
+    </p>
+
+    <p><strong> Soy un párrafo en negrita </strong></p>
+
+    <p>
+      Soy un párrafo que usa la etiqueta br <br />
+      para hacer salto de línea
+      <b>(a "br" la vamos a usar mientras sepamos SOLO HTML)</b>
+    </p>
+
+    <!-- Enlace e imagen -->
+
+    <a href="https://code.visualstudio.com/" target="_blank"> Soy un enlace </a>
+    <br />
+    <p>Clickeá la imagen</p>
+    <a href="https://code.visualstudio.com/" target="_blank">
+      <img
+        src="https://www.fundacionkonex.org/custom/web/data/imagenes/repositorio/2021/03/12/16575/2021031202544061e0e3f25c3041f849de6b510817fb34.jpg"
+        alt="Imagen de Lionel Messi"
+      />
+    </a>
+
+    <hr />
+
+    <!-- Sirvo para hacer líneas divisorias. Tambien me van a usar mientras solo sepan HTML -->
+
+    <h2>Lista desordenada</h2>
+
+    <ul>
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+    </ul>
+
+    <h2>Lista ordenada</h2>
+
+    <ol>
+      <li>Elemento 1</li>
+      <li>Elemento 2</li>
+      <li>Elemento 3</li>
+    </ol>
+
+    <h2>Listas anidadas</h2>
+
+    <ol>
+      <li>
+        Soy un elemento de una lista ordenada y adentro tengo otra lista
+        <ul>
+          <li>Elemento 1</li>
+          <li>Elemento 2</li>
+          <li>Elemento 3</li>
+        </ul>
+      </li>
+      <li>
+        Soy otro elemento de la lista ordenada y adentro tengo otra lista mas:
+        <ul>
+          <li>
+            Yo TAMBIEN tengo una lista adentro:
+            <ol>
+              <li>Elemento 1</li>
+              <li>Elemento 2</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2>Tablas</h2>
+
+    <table>
+      <tr>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+      </tr>
+      <tr>
+        <td>9hs</td>
+        <td>8hs</td>
+        <td>7hs</td>
+        <td>6hs</td>
+        <td>5hs</td>
+      </tr>
+      <tr>
+        <td>9hs</td>
+        <td>8hs</td>
+        <td>7hs</td>
+        <td>6hs</td>
+        <td>5hs</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <h2>Formularios</h2>
+    <!-- Input de tipo "text" -->
+
+    <label for="nombre"> Nombre: </label>
+    <input type="text" id="nombre" placeholder="Ingrese su nombre" />
+    <br />
+    <br />
+
+    <label for="apellido"> Apellido: </label>
+    <input type="text" id="apellido" placeholder="Ingrese su apellido" />
+
+    <br /><br />
+    <!-- Importante: La etiqueta input va acompañada de una etiqueta label. El "for" del label siempre coincide con el "id" del input-->
+
+    <!-- Input de tipo "number" -->
+
+    <label for="edad"> Edad: </label>
+    <input type="number" id="edad" placeholder="Ingrese su edad" />
+    <br /><br />
+    <!-- Input de tipo "email" -->
+
+    <label for="correo"> Email: </label>
+    <input type="email" id="correo" placeholder="Ingrese su mail" />
+    <br /><br />
+
+    <!-- Input de tipo "password" -->
+
+    <label for="pass"> Contraseña: </label>
+    <input
+      type="password"
+      id="pass"
+      placeholder="Ingrese su contraseña"
+      required
+    />
+    <br /><br />
+
+    <!-- Input de tipo checkbox -->
+
+    <label for="checkbox1"> Soy un input de tipo checkbox </label>
+    <input type="checkbox" id="checkbox1" />
+    <br /><br />
+
+    <label for="checkbox2"> Soy otro input de tipo checkbox </label>
+    <input type="checkbox" id="checkbox2" checked />
+    <br /><br />
+    <!-- Input de tipo radio -->
+    <span>Gusto de helado favorito:</span>
+    <input type="radio" id="chocolate" name="gustos" />
+    <label for="chocolate">Chocolate</label>
+
+    <input type="radio" id="dulce-de-leche" name="gustos" />
+    <label for="dulce-de-leche">Dulce de leche</label>
+
+    <input type="radio" id="menta-granizada" name="gustos" />
+    <label for="menta-granizada">Menta Granizada</label>
+    <br /><br />
+    <!-- Select -->
+
+    ¿Jugamos?:
+    <select>
+      <option value="piedra">Piedra</option>
+      <option value="papel">Papel</option>
+      <option value="tijera">Tijera</option>
+    </select>
+    <br /><br />
+
+    <!-- Etiqueta textarea -->
+    <label for="texto"> Soy un área de texto </label> <br />
+    <textarea
+      id="texto"
+      cols="30"
+      rows="10"
+      placeholder="Ingrese su texto aqui"
+    ></textarea>
+
+    <br /><br />
+
+    <!-- Botones -->
+
+    <input type="submit" value="Soy un botón" />
+
+    <button type="submit">Soy otro botón</button>
+  </body>
+</html>
