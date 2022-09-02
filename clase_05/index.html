@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fac4f6f0d-8160-4e58-9d18-cb5e7c880fb6_Recurso_32_png.png&w=384&q=75" />
+  <!-- Estilos Base -->
+  <link rel="stylesheet"
+    href="https://res.cloudinary.com/dcatzxqqf/raw/upload/v1659451742/coding/Dise%C3%B1oWebCDN/cdn_1_sjhqe3.css" />
+  <!-- Estilos Clase -->
+  <link rel="stylesheet" href="style.css" />
+
+  <title>CSS - Introduccion a CSS</title>
+</head>
+
+<body>
+  <main class="max-width">
+    <h1>
+      1.5 CSS 101
+      <img
+        src="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fac4f6f0d-8160-4e58-9d18-cb5e7c880fb6_Recurso_32_png.png&w=384&q=75"
+        alt="logo" class="logo" />
+    </h1>
+
+    <p>
+      Llegamos al maravilloso mundo de CSS! Acá ya todo empieza a cobrar
+      sentido, empezamos a conocer el lenguaje para darle color a nuestros
+      sitios web.😍
+    </p>
+    <h2>Objetivos</h2>
+    <p class="my">Conocer CSS y sus propiedades básicas.</p>
+    <a href="#" class="btn">Ver más</a>
+    <h2>Recursos de la clase:</h2>
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/es/docs/Web/CSS">https://developer.mozilla.org/es/docs/Web/CSS</a>
+      </li>
+
+      <li>
+        <a
+          href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance">https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance</a>
+      </li>
+
+      <li>
+        <a
+          href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors">https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Attribute_selectors</a>
+      </li>
+
+      <li>
+        <a
+          href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors">https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors</a>
+      </li>
+    </ul>
+    <hr class="hr" />
+    <section class="info-clase">
+      <div class="como-usar">
+        <h2>Como usar CSS</h2>
+        <p>Para usar CSS, debemos importarlo en nuestro HTML.</p>
+        <p class="my">
+          <span class="code">
+            &lt;link rel="stylesheet" href="style.css"&gt;</span>
+        </p>
+        <p>En el head usar la etiqueta de style</p>
+        <p class="my">
+          <span class="code">
+            &lt;style&gt; p { color: red;} &lt;/style&gt;</span>
+        </p>
+        <p>En la misma etiqueta</p>
+        <p class="my">
+          <span class="code">
+            &lt;p style="color:red;"&gt;Texto &lt;/p&gt;</span>
+        </p>
+      </div>
+      <!-- Selectores -->
+      <div class="selectores">
+        <h2>Selectores</h2>
+        <ul class="list">
+          <li>👉 <b>Id:</b> Lo usamos en CSS con #nombreSelector</li>
+          <div class="code">#selectorId {color: #8c54fb}</div>
+          <div class="bg-secondary-fit my">
+
+
+
+
+            <p id="selectorId" > Texto </p>
+
+
+
+
+
+
+          </div>
+          <li>
+            👉 <b>Clase:</b> Lo usamos en CSS con .nombreSelector (más usado)
+          </li>
+          <div class="code">.selectorClase {color: #e11d48}</div>
+          <div class="bg-secondary-fit my">
+
+
+
+
+
+            <p class="selectorClase" >Texto</p>
+
+
+
+
+
+          </div>
+
+          <li>
+            👉 <b>Etiqueta:</b> Lo usamos en css con el nombre de la etiqueta
+            (Esto modifica todas las etiquetas con ese nombre)
+          </li>
+          <div class="bg-secondary-fit my">
+
+
+
+
+
+              <h4>Texto</h4>
+
+
+
+
+
+          </div>
+          <li>
+            👉 <b>Combinador de descendientes:</b> Lo usamos para combinar
+            selectores. (Especificidad)
+          </li>
+
+
+          <div class="code" > .clase etiqueta #id { ... } </div>
+
+
+
+
+
+
+
+          <li>👉 <b>Combinador de hijo:</b></li>
+
+
+
+
+          <div class="code" > .clase > p { ... } </div>
+
+
+
+
+
+
+          <li>👉 <b>Combinador de hermanos adyacentes:</b></li>
+
+
+
+
+            <div class="code" > .clase + p { ... } </div>
+
+
+
+
+
+
+          <li>👉 <b>Combinador general del hermanos:</b></li>
+
+
+
+
+          <div class="code" > .clase ~ p { ... } </div>
+
+
+
+
+
+
+          <li>
+            Estos ultimos los vamos a estar usando a lo largo de la cursada.
+          </li>
+        </ul>
+      </div>
+      <hr class="hr" />
+      <!-- Medidas -->
+      <div class="medidas">
+        <h2>Medidas en CSS</h2>
+        <div class="absolutas">
+          <h2>Unidades Absolutas</h2>
+          <ul class="list">
+            <li><b>👉 px (más usados)</b></li>
+            <div class="bg-secondary-fit flex my">
+
+
+
+              <div class="caja" >100 px</div>
+              <div class="caja-mediana" >200 px</div>
+              <div class="caja-grande" > 300 px </div>
+
+
+
+
+
+            </div>
+            <li>👉 Otras medidas no usadas: cm,mm, in, pt, pc</li>
+          </ul>
+        </div>
+        <div class="relativas">
+          <h2>Unidades Relativas</h2>
+          <ul class="list">
+            <li>👉 em(más usados)</li>
+            <div class="bg-secondary-fit flex my">
+
+
+
+
+
+              <div class="caja-mediana" >
+                <p class="em" >Texto en em</p>
+              </div>
+
+
+
+
+
+            </div>
+            <li>👉 Rem(más usados)</li>
+            <div class="bg-secondary-fit flex my">
+
+
+
+
+
+              <div class="caja-mediana" >
+                <p class="rem" >
+                  Texto en rem
+                </p>
+                </div>
+
+
+
+
+
+            </div>
+            <li>👉%(porcentaje)</li>
+            <div class="bg-secondary-fit flex my">
+
+
+
+
+              <div class="caja-mediana" >
+                <div class="porcentaje" >
+                </div>
+              </div>
+
+
+
+
+
+
+            </div>
+            <li>👉 vh(viewport height)</li>
+            <div class="bg-secondary-fit flex my">
+
+
+
+
+              <div class="caja-mediana" >
+                <div class="vh" >Viewport Height</div>
+              </div>
+
+
+
+
+
+
+            </div>
+            <li>👉 vw(viewport width)</li>
+            <div class="bg-secondary-fit flex my">
+
+
+
+
+
+              <div class="caja-mediana" > 
+                <div class="vw" >Viewport Width</div>  
+              </div>
+
+
+
+
+
+            </div>
+        </div>
+        </ul>
+      </div>
+      </div>
+      <hr class="hr" />
+      <!-- Background y color -->
+      <div class="background">
+        <h2>Background y Color</h2>
+        <p>
+          Para cambiar el color/imagen de fondo y para cambiar los colores a
+          nuestros textos
+        </p>
+        <ul class="list">
+          <li><b>🎨background-color:</b> color,rgb,rgba,hexadecimal</li>
+          <li class="code">background-color: crimson</li>
+
+          <li>
+            <div class="bg-secondary-fit my">
+
+
+
+
+
+              <div class="caja bg-color" ></div>
+
+
+
+
+
+          </li>
+
+          <li>
+            <b>🎨background-img:</b> url("aca la ruta de la imagen"), la vamos
+            a usar en conjunto con bg-position/size;
+          </li>
+          <li class="code">background-img: url('./img/imagen.png');</li>
+          <li>
+            <div class="bg-secondary-fit my">
+
+
+
+
+              <div class="caja bg-img" ></div>
+
+
+
+
+
+
+            </div>
+          </li>
+
+          <li>
+            <b>🎨background-repeat</b> Si queremos que se repita la imagen de
+            fondo o no
+          </li>
+          <li class="code">background-repeat: repeat;</li>
+          <li>
+            <div class="bg-secondary-fit my">
+
+
+
+
+
+              <div class="caja bg-repeat " ></div>
+
+
+
+
+
+            </div>
+          </li>
+
+          <li>
+            <b>🎨background-attachment</b> Para determinar si la imagen de
+            fondo va a ser fija o se mueve con el contenedor
+          </li>
+          <li class="code">background-attachment: fixed;</li>
+          <li>
+            <div class="bg-secondary-fit my">
+
+
+
+
+
+              <div class="caja bg-attach" ></div>
+
+
+
+
+
+            </div>
+          </li>
+
+          <li>
+            <b>🎨background-position</b> Para posicionar la imagen de fondo
+          </li>
+          <li class="code">background-position: center;</li>
+          <li>
+            <div class="bg-secondary-fit my">
+
+
+
+
+
+              <div class="caja bg-position" ></div>
+
+
+
+
+
+            </div>
+          </li>
+          <li>
+            <b>🎨background-size</b> Para especificar el tamaño de la imagen
+            de fondo. (usada con bg-position center)
+          </li>
+          <li class="code">background-size: cover</li>
+          <li>
+            <div class="bg-secondary-fit my">
+
+
+
+
+              <div class="caja bg-size" ></div>
+
+
+
+
+
+
+            </div>
+          </li>
+          <li>
+            <b>🎨color:</b> para cambiar el color del texto, puede ser
+            color,rgb,rgba
+          </li>
+          <li class="code">color: crimson</li>
+          <li>
+            <div class="bg-secondary-fit my">
+
+
+
+
+
+              <div class="color" >
+                <p>Bienvenidos a Nucba</p>
+              </div>
+
+
+
+
+
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="hr" />
+      <!-- Color -->
+      <div class="fonts">
+        <h2>Tipografias</h2>
+        <p>
+          Para esto podemos descargarlas o bien utilizarlas de algun servicio
+          en la nube, como en este caso Google fonts
+          <a href="https://www.google.com/fonts">https://www.google.com/fonts</a>
+        </p>
+        <div class="estilos-texto">
+          <h2>Algunos estilos para textos</h2>
+          <ul class="list">
+            <li>👉 <b>font-family</b>Definimos la familia de la fuente</li>
+            <li class="code">font-family: 'Indie Flower';</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+
+
+               <div class="font-fa" >
+                <p>Texto con fuente personalizada</p>
+               </div>
+
+
+
+
+
+              </div>
+            </li>
+
+            <li>👉 <b>font-weight</b> Definimos el peso de la fuente</li>
+            <li class="code">font-weight: bold;</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+                <div class="font-we" >
+                  <p>Texto con bold</p>
+                </div>
+
+
+
+
+
+
+              </div>
+            </li>
+
+            <li>👉 <b>font-style</b> normal/italic/oblique</li>
+            <li class="code">font-style: italic;</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+
+
+                <div class="font-style" >
+                  <p>Texto con italic</p>
+                </div>
+
+
+
+
+
+              </div>
+            </li>
+
+            <li>👉 <b>font-size</b> Tamaño de fuente</li>
+            <li class="code">font-size: 2rem;</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+
+
+                <div class="font-size" >
+                  <p>Texto con size 2rem</p>
+                </div>
+
+
+
+
+
+              </div>
+            </li>
+
+            <li>👉 <b>letter-spacing</b> Espaciado entre letras</li>
+            <li class="code">letter-spacing: 10px;</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+
+                <div class="letter-spacing" >
+                  <p>Texto con letter spacing</p>
+                </div>
+
+
+
+
+
+
+              </div>
+            </li>
+
+            <li>👉 <b>word-spacing</b> Espaciado entre palabras</li>
+            <li class="code">word-spacing: 10px;</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+
+
+                <div class="word-spacing" >
+                  <p>Texto con word-spacing</p>
+                </div>
+
+
+
+
+
+              </div>
+            </li>
+
+            <li>👉 <b>line-height</b> Distancia entre renglones</li>
+            <li class="code">line-height: 55px;</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+
+                <div class="line-height" >
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia numquam ipsa quisquam laboriosam soluta? Eum dolorum suscipit, expedita earum quidem alias ratione totam in unde laborum obcaecati, magnam praesentium recusandae distinctio laudantium sed ipsam minima odio voluptates reprehenderit quis possimus.
+                  </p>
+                </div>
+
+
+
+
+
+
+              </div>
+            </li>
+
+            <li>👉 <b>text-align</b> Alinear texto</li>
+            <li class="code">text-align: center;</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+
+
+                <div class="text-align" >
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis dolorem expedita quae, eum accusantium sed nihil dolorum possimus ipsum ratione commodi distinctio est aperiam eos voluptatem libero inventore ipsa temporibus repellat molestias! Obcaecati repellendus deleniti maxime, aut animi voluptas similique!
+                  </p>
+                </div>
+
+
+
+
+
+              </div>
+            </li>
+
+            <li>👉 <b>text-transform</b> uppercase/lowercase/capitalize</li>
+            <li class="code">text-transform: uppercase;</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+
+
+                <div class="text-transform" >
+                  <p>Texto con text-transform</p>
+                </div>
+
+
+
+
+
+              </div>
+            </li>
+
+            <li>
+              👉 <b>text-decoration</b> underline/overline/line-throught/blink
+            </li>
+            <li class="code">text-decoration: underline;</li>
+            <li>
+              <div class="bg-secondary-fit my">
+
+
+
+
+
+                <div class="text-decoration" >
+                  <p>Texto con text-decoration</p>
+                </div>
+
+
+
+
+
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr class="hr" />
+
+      <div class="estilos-listas">
+        <h2>Estilos para listas</h2>
+        <ul class="list">
+          <li>⚡<b>list-style-type:</b> none (más usado)</li>
+          <li class="code">list-style-type:none;</li>
+
+          <div class="bg-secondary-fit my">
+
+
+
+
+            <ul class="style-none" >
+               <li>lista sin style</li>
+            </ul>
+           
+
+
+
+
+
+          </div>
+
+          <li>
+            ⚡ <b>list-style-position</b> Posicion donde estara el marcador
+          </li>
+          <li class="code">list-style-position: outside;</li>
+
+          <div class="bg-secondary-fit my">
+
+
+
+
+       
+              <li class="list-position">Lista con position outside</li>
+            
+
+
+
+
+
+
+          </div>
+
+          <li>⚡<b>list-style-image</b> Imagen para marcar listado</li>
+          <li class="code">list-style-image: url('./img/list.png');</li>
+
+          <div class="bg-secondary-fit my">
+
+
+
+
+            <li class="list-img" > Lista con imagen personalizada </li>
+
+
+
+
+
+
+          </div>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>Hecho con ❤️ en Nucba</footer>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fac4f6f0d-8160-4e58-9d18-cb5e7c880fb6_Recurso_32_png.png&w=384&q=75"
+    />
+    <!-- Estilos Base -->
+    <link
+      rel="stylesheet"
+      href="https://res.cloudinary.com/dcatzxqqf/raw/upload/v1659451742/coding/Dise%C3%B1oWebCDN/cdn_1_sjhqe3.css"
+    />
+    <!-- Estilos Clase -->
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS - CSS II</title>
+  </head>
+
+  <body>
+    <main class="max-width">
+      <h1>
+        1.6 CSS II
+        <img
+          src="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fac4f6f0d-8160-4e58-9d18-cb5e7c880fb6_Recurso_32_png.png&w=384&q=75"
+          alt="logo"
+          class="logo"
+        />
+      </h1>
+      <p>
+        En esta clase vamos a ver el Modelo de Caja (Box Model) Importantisimo
+        para entender como podemos posicionar y ordenar nuestros elementos.
+      </p>
+      <h2>Objetivos</h2>
+      <p class="my">Conocer las propiedades del box model y layout</p>
+      <a href="#" class="btn">Ver más</a>
+      <h2>Recursos de la clase:</h2>
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model"
+            >https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/The_box_model</a
+          >
+        </li>
+
+        <li>
+          <a href="https://developer.mozilla.org/es/docs/Web/CSS/position"
+            >https://developer.mozilla.org/es/docs/Web/CSS/position</a
+          >
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/es/docs/Web/CSS/display"
+            >https://developer.mozilla.org/es/docs/Web/CSS/display</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/es/docs/Web/HTML/Inline_elements#elementos"
+            >https://developer.mozilla.org/es/docs/Web/HTML/Inline_elements#elementos</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/es/docs/Web/HTML/Block-level_elements#elementos"
+            >https://developer.mozilla.org/es/docs/Web/HTML/Block-level_elements#elementos</a
+          >
+        </li>
+      </ul>
+      <hr class="hr" />
+      <section class="info-clase">
+        <div class="modelo-de-caja">
+          <h2>Modelo de caja</h2>
+          <p>
+            <b>¿De donde viene el nombre box-model o modelo de caja?</b>
+          </p>
+          <p class="my">
+            Viene a partir de que en los navegadores, todo se construye a base
+            de cajas. Lo primero que hay que entender es que cada elemento que
+            escribamos en un HTML se va a mostrar en el navegador como una caja
+            rectangular, que es la forma en que se representan TODOS los
+            elementos. No existe elementos redondos, triangulares, etc.
+          </p>
+        </div>
+        <hr class="hr" />
+        <div class="caja">
+          <div class="ej-1">
+            <p class="my caja-ej">Texto para mostrar que ocupa un p</p>
+            <p class="my">
+              El parrafo, como otras etiquetas, por defecto ocupan el 100% del
+              espacio disponible, ya vamos a ir viendo como podemos modificar
+              esto.
+            </p>
+          </div>
+          <hr class="hr" />
+          <!-- ej 2 para eplicar box sizing -->
+          <div class="ej-2">
+            <div class="box-sizing">
+              <h2>Box Sizing</h2>
+              <p>
+                La propiedad box-sizing (tamaño de caja) establece como se
+                calcula el ancho y alto total de un elemento. Recuerden que en
+                HTML todos los elementos son una caja y es muy importante
+                comprender que es el box-model (modelo de caja) antes de pasar
+                con el box-sizing. Tenemos dos tipos content-box (por defecto) y
+                border-box (solucion)
+              </p>
+              <div class="caja-ej2"></div>
+              <p>
+                Creamos un div con ancho y alto de 200px, al agregar padding y
+                border, esto se suma a nuestra caja dando un total de 260px de
+                alto y ancho.
+              </p>
+              <b>¿Como solucionamos esto?</b>
+              <p class="code">
+                * { box-sizing:border-box; padding:0; margin:0; };
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr class="hr" />
+        <!-- Overflow -->
+        <div class="overflow">
+          <h2>Overflow</h2>
+          <p>
+            La propiedad overflow nos permite regular la visibilidad de los
+            contenidos que sobresalen de una caja
+          </p>
+          <ul class="list">
+            <li>👉 <b>visible:</b> Por defecto, el excedente se ve</li>
+            <li>👉 <b>hidden:</b> El excedente se oculta</li>
+            <li>👉 <b>scroll:</b> Crea una barra de scroll (X/Y)</li>
+            <li>👉 <b>auto:</b> Crea Scroll donde sea necesario</li>
+          </ul>
+        </div>
+
+        <div class="bg-secondary my flex">
+          <!-- visible -->
+          <p>visible</p>
+
+          <div class="overflow-box my">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          </div>
+
+          <!-- hidden -->
+          <p>hidden</p>
+
+          <div class="overflow-box my hidden">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+
+          <!-- scroll -->
+          <p>scroll</p>
+
+          <div class="overflow-box my scroll">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+
+          <!-- auto -->
+          <p>auto</p>
+
+          <div class="overflow-box my auto">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+
+        <hr class="hr" />
+
+        <!-- Padding -->
+        <h2>Padding</h2>
+        <p>
+          Es el area del contenido, separacion entre contenido y el borde de la
+          caja
+        </p>
+        <h3>Shorthand Padding</h3>
+        <p class="code">padding: 10px 5px 20px 15px;</p>
+        <div class="bg-secondary-fit">
+          <p class="padding">Texto</p>
+        </div>
+        <p class="my">
+          Para acordarse donde va cada valor, pensar en el sentido de las agujas
+          del reloj.(Tambien sirve para el margin)
+        </p>
+        <hr class="hr" />
+        <!-- Border -->
+        <h2>Border</h2>
+        <p>Nos permite modificar el aspecto de los bordes</p>
+        <div class="bg-secondary my">
+          <p class="border">Solid</p>
+          <p class="dashed">Dashed</p>
+          <p class="dotted">Dotted</p>
+          <p class="double">Double</p>
+        </div>
+        <hr class="hr" />
+        <!-- Margin -->
+        <h2>Margin</h2>
+        <p>Es la separacion entre una caja y otra</p>
+        <h3>Shorthand Margin</h3>
+        <p class="code">margin: 10px 5px 20px 15px;</p>
+        <div class="bg-secondary my">
+          <div class="box margin"></div>
+          <div class="box"></div>
+        </div>
+        <hr class="hr" />
+        <!-- CSS Layout -->
+        <h2>CSS Layout</h2>
+        <p>Tenemos dos grupos: <b>En linea (inline) y bloque (block)</b></p>
+        <h2>En Bloque</h2>
+
+        <p class="caja-ej">Un p es una etiqueta de bloque por ejemplo</p>
+
+        <p class="my">
+          Ocupan todo el espacio disponible (100%), ver el ejemplo del p que
+          hicimos al principio.
+        </p>
+
+        <h2 class="my">En Linea</h2>
+
+        <a class="inline" href="#">Una etiqueta a es inline</a>
+        <a class="inline" href="#"
+          >Si tenemos otra etiqueta en linea se posiciona al lado</a
+        >
+
+        <p class="my">
+          Ocupan solo el espacio necesario para mostrar su contenido
+        </p>
+
+        <h2>Position</h2>
+        <p class="my">
+          Con position especificamos como un elemento es posicionado.Esto nos
+          habilita las propiedades de top, right, bottom y left
+        </p>
+        <b>Importante:</b> Cuando veamos Flex, Position lo vamos a usar para
+        casos puntuales.
+        <h2>Valores posibles</h2>
+        <ul class="list">
+          <li>👉 <b>static</b> Valor por defecto</li>
+          <li>👉 <b>relative</b> Se posiciona relativamente al Flujo Normal</li>
+          <div class="bg-secondary my flex">
+            <div class="box"></div>
+            <div class="box relative"></div>
+            <div class="box"></div>
+          </div>
+          <li>
+            👉 <b>absolute</b> Se posiciona respecto a su contenedor mas
+            cercano, si no encuentra ninguno se posiciona respecto el viewport.
+          </li>
+          <div class="bg-secondary my flex">
+            <div class="absolute-container flex">
+              <div class="box"></div>
+              <div class="box absolute"></div>
+              <div class="box"></div>
+            </div>
+          </div>
+          <li>
+            👉 <b>fixed</b> Se posiciona respecto al viewport y queda fijo.
+          </li>
+          <div class="bg-secondary my flex">
+            <div class="box"></div>
+            <div class="box fixed"></div>
+          </div>
+          <li>
+            👉 <b>sticky</b> Hibrido entre relative y fixed (Proximas clases)
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer>Hecho con ❤️ en Nucba</footer>
+  </body>
+</html>

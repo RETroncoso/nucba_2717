@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/* selectores */
+
+#selectorId {
+    color: #8c54fb;
+}
+
+.selectorClase {
+    color: #e11d48;
+}
+
+h4 {
+    background-color: #8c54fb;
+}
+
+.caja {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 1rem;
+    background-color: grey;
+}
+
+.caja-mediana {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: #e11d48;
+    font-size: 10px;
+
+}
+
+.caja-grande {
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    background-color: #8c54fb;
+    border-radius: 1rem;
+}
+
+/* unidades relativas */
+
+.em {
+    font-size: 2em;
+}
+
+.rem {
+    font-size: 2rem;
+}
+
+.porcentaje {
+    width: 50%;
+    height: 50%;
+    background-color: #8c54fb;
+}
+
+.vh {
+   height: 10vh; 
+   background-color: #8c54fb;
+}
+
+.vw {
+    width: 10vw;
+    background-color: #8c54fb;
+}
+
+.bg-color {
+    background-color: crimson;
+}
+
+.bg-img {
+    background-image: url('./img/bg-pattern.jpg') ;
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-repeat {
+    background-image: url('./img/bg-repeat.png');
+    background-repeat: repeat;
+}
+
+.bg-attach {
+    background-image: url('./img/bg-pattern.jpg');
+    background-attachment: fixed;
+}
+
+.bg-position {
+    background-image: url('./img/bg-pattern.jpg');
+    background-position: center;
+    background-size: contain;
+}
+
+.bg-size {
+    background-image: url('./img/messi.webp');
+    background-position: center;
+    background-size: cover;
+}
+
+.color p {
+    color: crimson;
+}
+
+/* Tipografias */
+
+.font-fa p {
+    margin: 0;
+    font-family: 'Indie Flower'
+  }
+
+.font-we p {
+    font-weight: bold;
+}
+
+.font-style {
+    font-style: italic;
+}
+
+.font-size {
+    font-size: 2rem;
+}
+
+.letter-spacing {
+    letter-spacing: 10px;
+}
+
+.word-spacing {
+    word-spacing: 10px;
+}
+
+.line-height {
+    line-height: 55px;
+}
+
+.text-align {
+    text-align: center;
+}
+
+.text-transform {
+    text-transform: uppercase;
+}
+
+.text-decoration {
+    text-decoration: underline;
+}
+
+/* Listas */
+
+.style-none {
+    list-style-type: none;
+}
+
+.list-position {
+    list-style-type: square;
+    list-style-position: outside;
+}
+
+.list-img {
+    list-style-image: url('./img/messi-list-img.jpg');
+    list-style-position: inside;
+}
