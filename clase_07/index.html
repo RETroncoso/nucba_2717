@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fac4f6f0d-8160-4e58-9d18-cb5e7c880fb6_Recurso_32_png.png&w=384&q=75"
+    />
+    <!-- Estilos Base -->
+    <link
+      rel="stylesheet"
+      href="https://res.cloudinary.com/dcatzxqqf/raw/upload/v1659451742/coding/Dise%C3%B1oWebCDN/cdn_1_sjhqe3.css"
+    />
+    <!-- Estilos Clase -->
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS - Flexbox</title>
+  </head>
+
+  <body>
+    <main class="max-width">
+      <h1>
+        1.7 CSS III - Flexbox
+        <img
+          src="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fac4f6f0d-8160-4e58-9d18-cb5e7c880fb6_Recurso_32_png.png&w=384&q=75"
+          alt="logo"
+          class="logo"
+        />
+      </h1>
+      <p>
+        Hoy toca ver Flexbox, la verdadera magia de CSS, con este display, vamos
+        a maquetar sitios webs muy rapido. Ya que podemos tener un muy buen
+        control del posicionamiento de las cajas😍 <b>En Nucba amamos flex</b>
+      </p>
+      <h2>Objetivos</h2>
+      <p class="my">
+        Conocer Flexbox y sus props, conocer que es el responsive design
+      </p>
+      <a href="#" class="btn">Ver más</a>
+      <h2>Recursos de la clase:</h2>
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexboxl"
+            >https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox</a
+          >
+        </li>
+      </ul>
+      <hr class="hr" />
+      <section class="info-clase">
+        <div class="container-flex max-width">
+          <h2>Flex direction</h2>
+          <p>Definimos la direccion del flex</p>
+          <!-- flex direction -->
+          <div class="bg-secondary my">
+            <!-- Row -->
+            <p>row (por defecto)</p>
+
+            <div class="row">
+              <div class="caja-flex"><p>1</p></div>
+              <div class="caja-flex"><p>2</p></div>
+              <div class="caja-flex"><p>3</p></div>
+            </div>
+
+            <!-- reverse -->
+            <p class="my">row-reverse</p>
+
+            <div class="row reverse">
+              <div class="caja-flex">
+                <p>1</p>
+              </div>
+              <div class="caja-flex">
+                <p>2</p>
+              </div>
+              <div class="caja-flex">
+                <p>3</p>
+              </div>
+            </div>
+
+            <!-- column -->
+            <p class="my">column</p>
+
+            <div class="column">
+              <div class="caja-flex">
+                <p>1</p>
+              </div>
+              <div class="caja-flex">
+                <p>2</p>
+              </div>
+              <div class="caja-flex">
+                <p>3</p>
+              </div>
+            </div>
+
+            <!-- column reverse -->
+            <p class="my">column-reverse</p>
+
+            <div class="column col-reverse">
+              <div class="caja-flex"><p>1</p></div>
+              <div class="caja-flex"><p>2</p></div>
+              <div class="caja-flex"><p>3</p></div>
+            </div>
+          </div>
+          <!-- flex wrap -->
+          <hr class="hr" />
+          <h2>Flex Wrap</h2>
+          <p>
+            Por defecto todos los elementos flex ocupan una sola linea(nowrap).
+            Podemos cambiar esto con esta propiedad.
+          </p>
+          <div class="bg-secondary my wrap-container">
+            <!-- wrap -->
+            <div class="flex-column">
+              <p>wrap</p>
+
+              <div class="wrap">
+                <div class="caja-flex"><p>1</p></div>
+                <div class="caja-flex"><p>2</p></div>
+                <div class="caja-flex"><p>3</p></div>
+              </div>
+            </div>
+
+            <!-- nowrap -->
+            <div class="flex-column">
+              <p>nowrap</p>
+
+              <div class="no-wrap">
+                <div class="caja-flex"><p>1</p></div>
+                <div class="caja-flex"><p>2</p></div>
+                <div class="caja-flex"><p>3</p></div>
+              </div>
+            </div>
+          </div>
+          <hr class="hr" />
+          <!-- flex-flow -->
+          <div class="flex-flow">
+            <h2>Flex flow</h2>
+            <p class="my">
+              Basicamente abrevia <span class="code">flex-direction</span> y
+              <span class="code">flex-wrap</span>
+            </p>
+          </div>
+          <hr class="hr" />
+          <!-- justify-content -->
+          <div class="justify-content">
+            <h2>justify-content 🤩</h2>
+            <p>
+              Con esta prop definimos la alineacion a lo largo del eje
+              principal. Lo vamos a usar mucho en conjunto con align-items.
+            </p>
+            <div class="bg-secondary my">
+              <!-- flex-start -->
+              <p>flex-start</p>
+
+              <div class="jc-start">
+                <div class="caja-flex"><p>1</p></div>
+                <div class="caja-flex"><p>2</p></div>
+                <div class="caja-flex"><p>3</p></div>
+              </div>
+
+              <!-- flex end -->
+              <p class="my">flex-end</p>
+
+              <div class="jc-end">
+                <div class="caja-flex"><p>1</p></div>
+                <div class="caja-flex"><p>2</p></div>
+                <div class="caja-flex"><p>3</p></div>
+              </div>
+
+              <!-- center -->
+              <p class="my">center</p>
+
+              <div class="jc-center">
+                <div class="caja-flex"><p>1</p></div>
+                <div class="caja-flex"><p>2</p></div>
+                <div class="caja-flex"><p>3</p></div>
+              </div>
+
+              <!-- space between -->
+              <p class="my">space-between</p>
+
+              <div class="jc-between">
+                <div class="caja-flex"><p>1</p></div>
+                <div class="caja-flex"><p>2</p></div>
+                <div class="caja-flex"><p>3</p></div>
+              </div>
+
+              <!-- space around -->
+              <p class="my">space-around</p>
+
+              <div class="jc-around">
+                <div class="caja-flex"><p>1</p></div>
+                <div class="caja-flex"><p>2</p></div>
+                <div class="caja-flex"><p>3</p></div>
+              </div>
+
+              <!-- space evenly-->
+              <p class="my">space-evenly</p>
+
+              <div class="jc-evenly">
+                <div class="caja-flex"><p>1</p></div>
+                <div class="caja-flex"><p>2</p></div>
+                <div class="caja-flex"><p>3</p></div>
+              </div>
+            </div>
+          </div>
+          <hr class="hr" />
+          <!-- Align Items -->
+          <div class="align-items">
+            <h2>align-items</h2>
+            <p>
+              Con esta prop alineamos los elementos en el eje cruzado. (El
+              contrario al eje principal)
+            </p>
+            <div class="bg-secondary my align">
+              <!-- flex-start -->
+              <div class="flex-column">
+                <p class="my">flex-start</p>
+
+                <div class="ai-start my props-align">
+                  <div class="caja-flex"><p>1</p></div>
+                  <div class="caja-flex"><p>2</p></div>
+                  <div class="caja-flex"><p>3</p></div>
+                </div>
+              </div>
+              <!-- flex-end -->
+              <div class="flex-column">
+                <p class="my">flex-end</p>
+
+                <div class="ai-end my props-align">
+                  <div class="caja-flex"><p>1</p></div>
+                  <div class="caja-flex"><p>2</p></div>
+                  <div class="caja-flex"><p>3</p></div>
+                </div>
+              </div>
+              <!-- center -->
+              <div class="flex-column">
+                <p class="my">center</p>
+
+                <div class="ai-center my props-align">
+                  <div class="caja-flex"><p>1</p></div>
+                  <div class="caja-flex"><p>2</p></div>
+                  <div class="caja-flex"><p>3</p></div>
+                </div>
+              </div>
+              <!-- stretch-->
+              <div class="flex-column">
+                <p class="my">stretch</p>
+
+                <div class="ai-stretch my props-align">
+                  <div class="caja-flex-stretch"><p>1</p></div>
+                  <div class="caja-flex-stretch"><p>2</p></div>
+                  <div class="caja-flex-stretch"><p>3</p></div>
+                </div>
+              </div>
+              <!-- baseline -->
+              <div class="flex-column">
+                <p class="my">baseline</p>
+
+                <div class="ai-baseline my props-align">
+                  <div class="caja-flex-baseline baseline-1"><p>1</p></div>
+                  <div class="caja-flex-baseline baseline-2"><p>2</p></div>
+                  <div class="caja-flex-baseline baseline-3"><p>3</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="hr" />
+          <div class="align-content">
+            <h2>align-content</h2>
+            <p>
+              Con esta prop definimos como se acomodan los elementos en el eje
+              cruzado. Solo va a tener efecto si tenemos varias lineas de
+              elementos. (Si tenemos una sola linea de elementos, no va a tener
+              ningun efecto)
+            </p>
+            <div class="bg-secondary my align">
+              <!-- flex-start -->
+              <div class="flex-column">
+                <p class="my">flex-start</p>
+
+                <div class="ac-start my props-align-content">
+                  <div class="caja-flex"><p>1</p></div>
+                  <div class="caja-flex"><p>2</p></div>
+                  <div class="caja-flex"><p>3</p></div>
+                </div>
+              </div>
+              <!-- flex-end -->
+              <div class="flex-column">
+                <p class="my">flex-end</p>
+
+                <div class="ac-end my props-align-content">
+                  <div class="caja-flex"><p>1</p></div>
+                  <div class="caja-flex"><p>2</p></div>
+                  <div class="caja-flex"><p>3</p></div>
+                </div>
+              </div>
+              <!-- center -->
+              <div class="flex-column">
+                <p class="my">center</p>
+
+                <div class="ac-center my props-align-content">
+                  <div class="caja-flex"><p>1</p></div>
+                  <div class="caja-flex"><p>2</p></div>
+                  <div class="caja-flex"><p>3</p></div>
+                  <div class="caja-flex"><p>4</p></div>
+                </div>
+              </div>
+              <!-- space between -->
+              <div class="flex-column">
+                <div class="flex-column">
+                  <p class="my">space-between</p>
+
+                  <div class="ac-space-between my props-align-content">
+                    <div class="caja-flex"><p>1</p></div>
+                    <div class="caja-flex"><p>2</p></div>
+                    <div class="caja-flex"><p>3</p></div>
+                    <div class="caja-flex"><p>4</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- space around -->
+              <div class="flex-column">
+                <p class="my">space-around</p>
+
+                <div class="ac-space-around my props-align-content">
+                  <div class="caja-flex"><p>1</p></div>
+                  <div class="caja-flex"><p>2</p></div>
+                  <div class="caja-flex"><p>3</p></div>
+                  <div class="caja-flex"><p>4</p></div>
+                </div>
+              </div>
+              <!-- stretch -->
+              <div class="flex-column">
+                <p class="my">stretch</p>
+
+                <div class="ac-stretch my props-align-content">
+                  <div class="caja-flex stretch"><p>1</p></div>
+                  <div class="caja-flex stretch"><p>2</p></div>
+                  <div class="caja-flex stretch"><p>3</p></div>
+                  <div class="caja-flex stretch"><p>4</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="hr" />
+          <div class="gap">
+            <h2>gap</h2>
+            <p class="my">El gap controla el espacio entre los elementos.</p>
+            <p class="code">gap: 10px | row-gap: 10px | column-gap: 10px</p>
+          </div>
+          <hr class="hr" />
+          <h2>Propiedades para los hijos</h2>
+          <div class="order">
+            <h2>order</h2>
+            <p>
+              Con esta prop podemos modificar el orden en el que aparecen en el
+              contenedor.
+            </p>
+            <div class="bg-secondary my">
+              <div class="ai-stretch my props-align">
+                <div class="caja-flex order-1"><p>1</p></div>
+                <div class="caja-flex order-2"><p>2</p></div>
+                <div class="caja-flex order-3"><p>3</p></div>
+              </div>
+            </div>
+            <hr class="hr" />
+            <h2>flex-grow</h2>
+            <p>
+              Con esta prop determinamos el espacio que ocupa dentro del
+              contenedor
+            </p>
+            <div class="bg-secondary my">
+              <div class="ai-stretch my props-align">
+                <div class="caja-flex grow-1"><p>1</p></div>
+                <div class="caja-flex"><p>2</p></div>
+                <div class="caja-flex"><p>3</p></div>
+              </div>
+            </div>
+            <hr class="hr" />
+            <h2>flex-shrink</h2>
+            <p>
+              Especificamos el valor de concentracion de un item. Los demas
+              items se van a achicar para llenar el contenedor segun el numero
+              del flex-shrink. Por defecto es 1
+            </p>
+            <div class="bg-secondary my">
+              <div class="shrink my props-shrink">
+                <div class="caja-flex shrink-1"><p>1</p></div>
+                <div class="caja-flex shrink-2"><p>2</p></div>
+                <div class="caja-flex shrink-3"><p>3</p></div>
+              </div>
+            </div>
+            <hr class="hr" />
+            <h2>flex-basis</h2>
+            <p>
+              Con esta prop especificamos la base flexible, es el tamaño inicial
+              de un item.
+            </p>
+
+            <div class="bg-secondary my">
+              <div class="basis my">
+                <div class="caja-flex basis-1">
+                  <p>1</p>
+                </div>
+                <div class="caja-flex basis-2">
+                  <p>2</p>
+                </div>
+                <div class="caja-flex basis-3">
+                  <p>3</p>
+                </div>
+              </div>
+            </div>
+            <hr class="hr" />
+            <h2>align-self</h2>
+            <p>
+              Y por último tenemos la prop de align-self, donde podemos anular
+              la alineacion default o la que especifiquemos en el align-items
+            </p>
+            <div class="bg-secondary my">
+              <div class="self my props-align">
+                <div class="caja-flex self-1"><p>1</p></div>
+                <div class="caja-flex self-2"><p>2</p></div>
+                <div class="caja-flex self-3"><p>3</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>Hecho con ❤️ en Nucba</footer>
+  </body>
+</html>
