@@ -1,0 +1,127 @@
+/* Estilos de la clase */
+.hover {
+    background: var(--rose);
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 1rem;
+}
+.hover:hover {
+    background: var(--purple);
+    transition: all 0.3s ease;
+}
+
+/* active */
+.active:active {
+    color: var(--rose);
+    transition: all 0.3s ease;
+}
+
+/* visited */
+.visited:visited {
+    color: var(--purple);
+}
+
+/* link */
+a.link:link {
+    color: var(--rose);
+}
+
+/* focus */
+
+.focus {
+    padding: 5px 10px;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+}
+
+.focus:focus {
+    background: var(--light-red);
+    color: white;
+}
+
+/* Cajas */
+.flex {
+    display: flex;
+}
+
+.caja {
+    width: 100px;
+    height: 100px;
+    background-color: var(--light-red);
+    border-radius: 1rem;
+}
+
+/* first-child */
+.first .caja:first-child {
+    background: var(--purple);
+}
+
+/* last-child */
+.last .caja:last-child {
+    background: var(--purple);
+}
+
+/* first-of-type  */
+.first-of-type .caja:first-of-type {
+    background-color: var(--purple);
+}
+/* nth-child odd*/
+.nth-child-odd .caja:nth-child(odd) {
+    background: var(--purple);
+}
+
+/* nth-child even */
+.nth-child-even .caja:nth-child(even) {
+    background: var(--purple);
+}
+
+/* nth-child-number  */
+.nth-child-number .caja:nth-child(3) {
+    background: var(--purple);
+}
+
+/* nth-child-n */
+.nth-child-n .caja:nth-child(2n) {
+    background: var(--purple);
+
+}
+/* nth-child-number-n */
+.nth-child-number-n .caja:nth-child(3n + 1) {
+    background: var(--purple);
+}
+
+/* first-letter */
+.first-letter::first-letter {
+    background: var(--purple);
+    font-size: 1.5rem;
+}
+
+/* first-line */
+.first-line::first-line {
+    background: var(--purple);
+}
+
+/* before */
+/*🤩*/
+.before::before {
+    content: '(🤩) ';
+}
+
+/* after */
+/*🍕*/
+.after::after {
+    content: ' (🍕)';
+}
+
+/* placeholder */
+.input-placeholder {
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+}
+
+.input-placeholder::placeholder {
+    background: cornflowerblue;
+    color: white;
+}

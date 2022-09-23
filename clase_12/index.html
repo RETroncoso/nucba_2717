@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fac4f6f0d-8160-4e58-9d18-cb5e7c880fb6_Recurso_32_png.png&w=384&q=75"
+    />
+    <!-- Estilos Base -->
+    <link
+      rel="stylesheet"
+      href="https://res.cloudinary.com/dcatzxqqf/raw/upload/v1659451742/coding/Dise%C3%B1oWebCDN/cdn_1_sjhqe3.css"
+    />
+    <!-- Estilos Clase -->
+    <link rel="stylesheet" href="style.css" />
+    <title>CSS - PseudoElementos/Clases</title>
+  </head>
+
+  <body>
+    <main class="max-width">
+      <h1>
+        1.12 PseudoClases/Elementos
+        <img
+          src="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fac4f6f0d-8160-4e58-9d18-cb5e7c880fb6_Recurso_32_png.png&w=384&q=75"
+          alt="logo"
+          class="logo"
+        />
+      </h1>
+      <p>Explicacion clase</p>
+      <h2>Objetivos</h2>
+      <p class="my">Objetivos clase</p>
+      <a href="#" class="btn">Ver más</a>
+      <h2>Recursos de la clase:</h2>
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elementss"
+            >https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements</a
+          >
+        </li>
+      </ul>
+      <hr class="hr" />
+      <section class="info-clase">
+        <h2>Pseudo Clases</h2>
+        <p class="my">
+          Las pseudoclases, junto con los pseudoelementos, nos permiten aplicar
+          un estilo a un elemento. No sólo en relación con el contenido del
+          documento, sino también en relación a factores externos. Como el
+          historial del navegador(:visited), el estado de su contenido(:checked)
+          o la posición del mouse (:hover)
+        </p>
+        <h3>Hover</h3>
+        <p class="my">
+          Se activa cuando el user pasa el mouse sobre un elemento
+        </p>
+        <p class="code">a { background-color: #e11d48; }</p>
+        <div class="bg-secondary">
+          <a href="#" class="hover"> Pasame el mouse por encima </a>
+        </div>
+        <p class="code">a:hover{ background-color: #8c54fb; }</p>
+        <div class="bg-secondary">
+          <a href="#" class="hover">Pasame el mouse por arriba</a>
+        </div>
+        <hr class="hr my" />
+        <h3>Active | Link | Visited</h3>
+        <b>Active</b>
+        <p class="my">
+          La pseudo clase :active se usa comunmente en los elementos &lt;a&gt; y
+          &lt;button&gt;
+        </p>
+        <p class="code">a:active { color: #e11d48; }</p>
+        <div class="bg-secondary my">
+          <a href="#" class="active"> nucba.com.ar </a>
+        </div>
+        <b>visited</b>
+        <p class="my">
+          La pseudo clase :visited representa los enlaces que el usuario ya ha
+          visitado.
+        </p>
+        <p class="code">a:visited { color: purple; }</p>
+        <div class="bg-secondary my">
+          <a href="#" class="visited"> nucba.com.ar </a>
+        </div>
+        <b>link</b>
+        <p class="my">
+          La pseudo clase :link representa un elemento que aún no se ha
+          visitado.
+        </p>
+        <p class="code">a:link {color: salmon; }</p>
+        <div class="bg-secondary my">
+          <a href="nucba.com" class="link"> nucba.com.ar.co </a>
+        </div>
+        <hr class="hr" />
+        <h3>Focus</h3>
+        <p class="my">
+          La pseudo clase :focus reprensenta un elemento que ha recibido foco.
+          Se activa cuando el user hace click, toca un elemento o lo selecciona
+          con la tecla Tab del teclado.
+        </p>
+        <p class="code">
+          input:focus{ background: cornflowerblue; color: white }
+        </p>
+        <div class="bg-secondary my">
+          <input type="text" class="focus" placeholder="Ingresa tu nombre" />
+        </div>
+        <hr class="hr" />
+
+        <!-- First Child -->
+        <h3>First child</h3>
+        <p>
+          La pseudo clase :first-child representa el primer elemento entre un
+          grupo de elementos hermanos
+        </p>
+        <div class="bg-secondary my">
+          <div class="first flex">
+            <div class="caja"></div>
+            <div class="caja"></div>
+          </div>
+        </div>
+
+        <!-- Last child -->
+        <h3>Last child</h3>
+        <p class="my">
+          La pseudo-clase :last-child representa el último elemento entre un
+          grupo de elementos hermanos.
+        </p>
+        <div class="bg-secondary my">
+          <div class="last flex">
+            <div class="caja"></div>
+            <div class="caja"></div>
+          </div>
+        </div>
+
+        <!-- First of type -->
+        <h3>First of type</h3>
+        <p class="my">
+          La pseudo-clase :first-of-type representa el primer elemento de su
+          tipo entre un grupo de elementos hermanos
+        </p>
+        <div class="bg-secondary my">
+          <div class="first-of-type flex">
+            <div class="caja"></div>
+            <section class="caja"></section>
+            <div class="caja"></div>
+            <section class="caja"></section>
+            <article class="caja"></article>
+          </div>
+        </div>
+
+        <!-- NTH CHILD -->
+        <h3>Nth child</h3>
+        <p class="my">
+          La pseudo-clase :nth-child() coincide con uno o más elementos en
+          función de su posición entre un grupo de hermanos.
+        </p>
+        <p class="my">Tenemos algunos valores para usar</p>
+        <b>Odd</b>
+        <p>Representa a los elementos cuya posición es impar</p>
+        <div class="bg-secondary my">
+          <div class="nth-child-odd flex">
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+          </div>
+        </div>
+
+        <b>Even</b>
+        <p>Representa los elementos cuya posición es par</p>
+        <div class="bg-secondary my">
+          <div class="nth-child-even flex">
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+          </div>
+        </div>
+
+        <b>Con Numero</b>
+        <p class="my">Representa el elemento que le digamos</p>
+        <div class="bg-secondary my">
+          <div class="nth-child-number flex">
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+          </div>
+        </div>
+
+        <b>Numero n</b>
+        <p>Representa cada cuantos elementos seleccionamos</p>
+        <div class="bg-secondary my">
+          <div class="nth-child-n flex">
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+          </div>
+        </div>
+
+        <b>Numero n + Numero</b>
+        <p>Representa a partir de que elemento seleccionamos y cada cuantos.</p>
+        <div class="bg-secondary my">
+          <div class="nth-child-number-n flex">
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+            <div class="caja"></div>
+          </div>
+        </div>
+
+        <hr class="hr" />
+        <h2>PseudoElementos</h2>
+        <p class="my">
+          Al igual que las pseudo-clases, los pseudo-elementos se añaden a los
+          elementos, pero la diferencia está en que no describen un estado en
+          especial, si no que se permite añadir estilos a una parte concreta del
+          documento.
+        </p>
+        <hr class="hr" />
+        <h3>First letter</h3>
+        <p>
+          El pseudo elemento <b>::first-letter</b> aplica estilos a la primera
+          letra de un párrafo.
+        </p>
+        <div class="bg-secondary my">
+          <div class="first-letter">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi
+              aspernatur officiis explicabo consectetur quas molestias quia
+              voluptates eum alias? Rem!
+            </p>
+          </div>
+        </div>
+
+        <h3>First Line</h3>
+        <p>
+          El pseudo-elemento <b>::first-line</b> aplica estilos a la primera
+          linea de un párrafo.
+        </p>
+        <div class="bg-secondary my">
+          <div class="first-line">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
+              molestias aperiam ad fugiat quod vitae aliquid officia tempore
+              unde nisi.
+            </p>
+          </div>
+        </div>
+
+        <h3>Before</h3>
+        <p>
+          El pseudo-elemento<b>::before</b> crea un pseudo-elemento antes del
+          elemento. Se usa normalmente para agregar contenido estético a un
+          elemento.
+        </p>
+        <div class="bg-secondary my">
+          <p class="before">Hola. Tengo un before</p>
+        </div>
+        <h3>After</h3>
+        <p>
+          El pseudo-elemento <b>::after</b> crea un pseudo-elemento después del
+          elemento. Se usa normalmente para agregar contenido estético a un
+          elemento.
+        </p>
+        <div class="bg-secondary my">
+          <p class="after">Hola tengo un after</p>
+        </div>
+
+        <h3>Placeholder</h3>
+        <p>
+          El pseudo-elemento <b>::placeholder</b> representa al placeholder de
+          un elemento &lt;input&gt;
+        </p>
+        <div class="bg-secondary my">
+          <input
+            type="text"
+            class="input-placeholder"
+            placeholder="Soy un placeholder"
+          />
+        </div>
+      </section>
+    </main>
+    <footer class="my">Hecho con ❤️ en Nucba</footer>
+  </body>
+</html>
