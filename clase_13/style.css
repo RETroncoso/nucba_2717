@@ -1,0 +1,261 @@
+/* Estilos de la clase */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background: var(--rose);
+    border-radius: 1rem;
+}
+
+.animada {
+    animation-name: moverCaja;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Alternate en la animacion */
+.alternada {
+    animation-direction: alternate;
+}
+
+/* timing function */
+.timing {
+    animation-timing-function: ease-in-out;
+}
+
+.paused:hover {
+    animation-play-state: paused;
+}
+
+@keyframes moverCaja {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(710px);
+    }
+}
+
+/* Translate */
+.translateX {
+    animation: translateX 2s infinite;
+    /* transform: translateX(20px); */
+}
+
+/* @keyframes translateX {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(20px);
+    }
+} */
+
+.translateY {
+    animation: translateY 2s infinite;
+    background: var(--purple);
+}
+
+/* @keyframes translateY {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
+} */
+
+.translate {
+    animation: translate 2s infinite;
+}
+
+/* @keyframes translate {
+    0% {
+        transform: translate(0)
+    }
+    100% {
+        transform: translate(10px, 20px);
+    }
+} */
+
+/* Rotate */
+.rotate {
+    animation: rotate 2s infinite;
+    width: 100px;
+    height: 100px;
+}
+
+/* @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+
+.rotate-negative {
+    animation: rotate-negative 2s infinite;
+    width: 100px;
+    height: 100px;
+    background-color: var(--purple);
+}
+
+/* @keyframes rotate-negative {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+} */
+
+/* Scale */
+
+.scaleX {
+    animation: scaleX 2s infinite;
+}
+
+/* @keyframes scaleX {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(1.1);
+    }
+} */
+
+.scaleY {
+    animation: scaleY 2s infinite;
+    background-color: var(--purple);
+}
+
+/* @keyframes scaleY {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+         transform: scaleY(1.1);
+    }
+} */
+
+.scale {
+    animation: scale 2s infinite;
+}
+
+/* @keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+} */
+
+/* Skew */
+.skewX {
+    animation: skewX 2s infinite;
+}
+
+/* @keyframes skewX {
+    0% {
+        transform: skewX(0deg);
+    }
+    100% {
+        transform: skewX(10deg);
+    }
+} */
+
+.skewY {
+    animation: skewY 2s infinite;
+    background-color: var(--purple);
+}
+
+/* @keyframes skewY {
+    0% {
+        transform: skewY(0deg);
+    }
+    100% {
+        transform: skewY(10deg);
+    }
+} */
+
+.skew {
+    animation: skew 2s infinite;
+}
+
+/* @keyframes skew {
+    0% {
+        transform: skew(0deg);
+    }
+    100% {
+        transform: skew(10deg);
+    }
+} */
+
+/* transition */
+.transition {
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+.transition:hover {
+    background: var(--purple);
+    width: 100px;
+    height: 100px;
+    transition-property: all;
+    transition-duration: 1s;
+}
+
+/* transition timing function */
+
+.transition-timing {
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    background: var(--purple);
+}
+
+.transition-timing:hover {
+    background: var(--rose);
+    width: 100px;
+    height: 100px;
+    transform: rotate(20deg);
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease
+    ;
+}
+
+/* transition timing delay*/
+.transition-delay {
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    transition-delay: 1s;
+}
+
+.transition-delay:hover {
+    background: var(--purple);
+    width: 100px;
+    height: 100px;
+    transform: rotate(20deg);
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    transition-delay: 1s;
+}
+
+/* transition shorthand */
+.transition-shorthand {
+    transition: all 1s ease-out;
+    background: var(--purple);
+}
+
+.transition-shorthand:hover {
+    background: var(--rose);
+    width: 100px;
+    height: 100px;
+    transform: rotate(-180deg);
+    transition: all 1s ease-out;
+}
