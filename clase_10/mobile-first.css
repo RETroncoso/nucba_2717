@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  /* bg colors */
+  --background: #02050e;
+  --primary: #1e50ff;
+  --secondary: #272d37;
+  --btn-bg: #050d26;
+  --bg-azul-10: #e9eeff;
+  --bg-white: #fff;
+  --bg-electric: #f0fbff;
+  --nav-bg: #0f1525;
+
+  /* Text colors */
+  --text-gray: #adb9c7;
+  --text-white: #f3f4f6;
+
+  /* Decoration */
+  --fire: #ff6d00;
+  --electric: #64d3ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background: var(--nav-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.caja {
+  background-color: var(--electric);
+  width: 90%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.caja1 {
+  color: orangered;
+}
+
+.caja2 {
+  font-size: 25px;
+  background-color: var(--fire);
+}
+
+.caja3 {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 90%;
+    height: 90%;
+  }
+
+  .caja {
+    width: min(90%, 600px);
+  }
+
+  .caja1 {
+    display: none;
+  }
+  .caja2 {
+    font-size: 60px;
+    color: var(--primary);
+  }
+  .caja3 {
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: max(1000px, 80%);
+  }
+  .caja {
+    width: unset;
+    padding: 30px;
+  }
+
+  .caja1 {
+    display: flex;
+  }
+  .caja2 {
+    font-size: 16px;
+    align-items: flex-start;
+  }
+  .caja3 {
+    background: linear-gradient(to right, #d7d2cc, #304352);
+  }
+}
