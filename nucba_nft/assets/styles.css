@@ -75,11 +75,11 @@ header {
 .cart-icon {
   border: 1px solid var(--bg-electric);
   padding: 12px 18px;
-  margin-top: 3px;
   border-radius: 10px;
-  height: 36px;
   font-weight: 600;
   cursor: pointer;
+  color: var(--text-white);
+  font-size: 14px;
 }
 
 .cart {
@@ -95,7 +95,8 @@ header {
   height: calc(100vh - 65px);
   overflow-y: scroll;
   z-index: 2;
-  display: none;
+  transform: translate(200%);
+  transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);  
 }
 
 .cart::-webkit-scrollbar {
@@ -205,7 +206,8 @@ header {
 }
 
 #cart-toggle:checked + .cart {
-  display: flex;
+  transform: translate(0%);
+  transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
 /* main */
