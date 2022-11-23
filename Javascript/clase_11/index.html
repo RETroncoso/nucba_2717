@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TodoApp</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+			integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<section class="todo-container">
+			<h1>
+				To Do List
+				<img
+					src="https://renderer-v2.vercel.app/_next/image?url=https%3A%2F%2Fapi.typedream.com%2Fv0%2Fdocument%2Fpublic%2Fac4f6f0d-8160-4e58-9d18-cb5e7c880fb6_Recurso_32_png.png&w=384&q=75"
+					alt="logo"
+					class="logo"
+				/>
+			</h1>
+			<form class="add-form">
+				<div class="input-container">
+					<img src="./img/vector.svg" alt="Lupa de busqueda" />
+
+					<input
+						type="text"
+						class="input-text"
+						placeholder="Ingresá una tarea"
+					/>
+				</div>
+				<button class="add-btn">Agregar</button>
+			</form>
+		</section>
+		<ul class="tasks-list"></ul>
+		<button class="deleteAll-btn">Borrar tareas</button>
+		<footer class="my">Hecho con ❤️ en Nucba</footer>
+		<script src="main.js"></script>
+	</body>
+</html>

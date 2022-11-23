@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: #252525;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo {
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 4rem;
+}
+
+.add-form {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.input-container {
+  display: flex;
+}
+
+.input-text {
+  display: flex;
+  background-color: #3b3b3b;
+  outline: none;
+  border: none;
+  padding: 15px 10px;
+  border-radius: 0px 8px 8px 0px;
+  width: 250px;
+  color: white;
+  padding-left: 5px;
+}
+
+.input-text::placeholder {
+  color: #808080;
+  font-size: 0.9rem;
+}
+
+.input-container img {
+  width: 34px;
+  background-color: #3b3b3b;
+  border-radius: 8px 0px 0px 8px;
+  padding: 0.7rem;
+}
+
+.add-btn {
+  background: linear-gradient(45deg, #ff8d0c, #ff1153);
+  outline: none;
+  border: 0px solid;
+  padding: 10px 40px;
+  border-radius: 8px;
+  color: rgb(226, 226, 226);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.delete-btn {
+  cursor: pointer;
+}
+
+.tasks-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: min(550px, 90%);
+  gap: 1rem;
+}
+
+.tasks-list li {
+  background: #282828;
+  color: rgb(226, 226, 226);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.deleteAll-btn {
+  margin-top: 30px;
+  background: linear-gradient(45deg, #ff8d0c, #ff1153);
+  outline: none;
+  border: 0px solid;
+  padding: 15px 40px;
+  border-radius: 8px;
+  color: rgb(226, 226, 226);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 700;
+  width: min(550px, 90%);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.add-btn:hover,
+.deleteAll-btn:hover {
+  background: linear-gradient(45deg, #f68606, #e00745);
+}
+
+footer {
+  text-align: center;
+  color: white;
+  padding: 50px 0px;
+}
+
+@media (max-width: 576px) {
+  .input-text {
+    width: 100%;
+  }
+
+  .input-container {
+    width: 95%;
+  }
+
+  .add-container {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .todo-container {
+    padding: 2rem 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .add-btn {
+    width: 95%;
+  }
+}
