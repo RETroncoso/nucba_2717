@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0d0d0d;
+  color: white;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #171719;
+  z-index: 1;
+}
+
+.navbar__logo {
+  width: 50px;
+  margin-top: 10px;
+}
+
+main {
+  max-width: 1200px;
+  height: 75vh;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  gap: 50px;
+}
+
+.content__text h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.content__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text__btns {
+  display: flex;
+  gap: 30px;
+  padding-top: 30px;
+}
+
+.btn {
+  padding: 10px 25px;
+  border-radius: 1rem;
+  background-color: #252525;
+}
+
+.login__btn {
+  background-color: #242424;
+}
+
+.login__btn span {
+  background: linear-gradient(90deg, #ffa100, #ff005c);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.register__btn {
+  background: linear-gradient(90deg, #ffa100, #ff005c);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__nav__link {
+  color: white;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__text {
+  padding-top: 40px;
+}
+
+.footer__text--strong {
+  font-weight: 800;
+}

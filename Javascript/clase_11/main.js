@@ -10,11 +10,11 @@ const saveLocalStorage = (tasksList) => {
 };
 
 const createTask = (task) => {
-	`<li>${task.name}<img class="delete-btn" src="./img/delete.svg" alt="boton de borrar" data-name="${task.name}"></li>`;
+	return `<li>${task.name}<img class="delete-btn" src="./img/delete.svg" alt="boton de borrar" data-name="${task.name}"></li>`;
 };
 
 const renderTasksList = (todoList) => {
-	tasksList.innerHTML = todoList.map((task) => createTask(task).join(""));
+	tasksList.innerHTML = todoList.map((task) => createTask(task)).join("");
 };
 
 const hideDeleteAll = (tasksList) => {
@@ -33,7 +33,7 @@ const addTask = (e) => {
 		return;
 	} else if (
 		tasks.some((task) => {
-			task.name.toLowerCase() === taskName.toLowerCase();
+			return task.name.toLowerCase() === taskName.toLowerCase();
 		})
 	) {
 		alert("Ya existe una tarea con ese nombre");
@@ -47,9 +47,29 @@ const addTask = (e) => {
 	hideDeleteAll(tasks);
 };
 
+const removeTask = (e) => {
+	if (!e.target.classList.contains("delete-btn")) {
+		return;
+	}
+	const filterName = e.target.dataset.name;
+	tasks = tasks.filter((task) => task.name !== filterName);
+	renderTasksList(tasks);
+	saveLocalStorage(tasks);
+	hideDeleteAll(tasks);
+};
+
+const removeAll = () => {
+	tasks = [];
+	renderTasksList(tasks);
+	saveLocalStorage(tasks);
+	hideDeleteAll(tasks);
+};
+
 const init = () => {
 	renderTasksList(tasks);
 	addForm.addEventListener("submit", addTask);
+	tasksList.addEventListener("click", removeTask);
+	deleteBtn.addEventListener("click", removeAll);
 	hideDeleteAll(tasks);
 };
 
