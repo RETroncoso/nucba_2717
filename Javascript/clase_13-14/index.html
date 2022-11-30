@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Co-Working</title>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="./assets/img/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/img/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="./assets/img/favicon-16x16.png"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="./assets/style.css" />
+	</head>
+
+	<body>
+		<main class="container">
+			<div class="left__container">
+				<div class="left__text">
+					<h1>¡Carga de turnos!</h1>
+					<p>
+						A continuación debes dejar los datos del turno reservado en el
+						<b>NucWorking.</b>
+					</p>
+				</div>
+				<!-- Formulario a validar -->
+				<form id="form">
+					<div class="form__inputs">
+						<div class="form__top">
+							<div class="form__field">
+								<label for="name">Nombre</label>
+								<input type="text" id="name" name="name" />
+								<small></small>
+							</div>
+							<div class="form__field">
+								<label for="surname">Apellido</label>
+								<input type="text" name="surname" id="surname" />
+								<small></small>
+							</div>
+						</div>
+						<div class="form__mid">
+							<div class="form__field">
+								<label for="date">Fecha</label>
+								<!-- Input para la fecha -->
+								<input type="date" name="date" id="date" />
+								<small></small>
+							</div>
+							<div class="form__field">
+								<label for="hour">Hora</label>
+								<!-- Input para el horario -->
+								<input type="time" name="hour" id="hour" />
+								<small></small>
+							</div>
+						</div>
+						<div class="form__bot">
+							<div class="form__field">
+								<label for="email">Correo electronico</label>
+								<input type="email" name="email" id="email" />
+								<small></small>
+							</div>
+							<div class="form__field">
+								<label for="phone">Telefono</label>
+								<input type="tel" name="phone" id="phone" />
+								<small></small>
+							</div>
+						</div>
+					</div>
+
+					<!-- Checkbox -->
+					<div class="form__inputs">
+						<p>¿Cantidad de personas?</p>
+						<div class="form__field">
+							<label for="less5" class="custom__label">
+								<input
+									type="radio"
+									name="quantity"
+									id="less5"
+									value="Menos de 5"
+								/>
+								Menos de 5
+							</label>
+
+							<label for="between510" class="custom__label">
+								<input
+									type="radio"
+									name="quantity"
+									id="between510"
+									value="Entre 5 y 10"
+									checked
+								/>
+								Entre 5 y 10
+							</label>
+
+							<label for="more10" class="custom__label">
+								<input
+									type="radio"
+									name="quantity"
+									id="more10"
+									value="Más de 10"
+								/>
+								Mas de 10
+							</label>
+						</div>
+					</div>
+
+					<!-- Radio -->
+					<div class="form__inputs">
+						<p>Herramientas extras</p>
+						<div class="form__field">
+							<label for="pc" class="custom__label">
+								<input
+									type="checkbox"
+									name="pc"
+									id="pc"
+									value="Computadora"
+									checked
+								/>
+								Computadora
+							</label>
+
+							<label for="camera" class="custom__label">
+								<input
+									type="checkbox"
+									name="camera"
+									id="camera"
+									value="Cámara"
+								/>
+								Cámara
+							</label>
+
+							<label for="speakers" class="custom__label">
+								<input
+									type="checkbox"
+									name="speakers"
+									id="speakers"
+									value="Parlantes"
+								/>
+								Parlantes
+							</label>
+
+							<label for="projector" class="custom__label">
+								<input
+									type="checkbox"
+									name="projector"
+									id="projector"
+									value="Proyector/Pizarra"
+								/>
+								Proyector/Pizarra
+							</label>
+
+							<label for="room" class="custom__label">
+								<input
+									type="checkbox"
+									name="room"
+									id="room"
+									value="Sala de reunión privada"
+								/>
+								Sala de reunion privada
+							</label>
+						</div>
+					</div>
+					<div class="form__field">
+						<label for="message" class="message">
+							¿Como escuchó el cliente de nosotros?
+							<span>Opcional</span>
+						</label>
+						<input type="text" id="message" name="message" />
+					</div>
+
+					<button type="submit">Enviar</button>
+				</form>
+			</div>
+			<!-- Separador -->
+			<div class="mid__container"></div>
+			<!-- Cards -->
+			<div class="right__container" id="cards-container">
+				<!-- ACA VAN LOS TURNOS -->
+
+				<!-- <div class="card black-card">
+					<div class="card__left">
+						<h2 class="card__title">Orden: N1 - Saul Goodman</h2>
+						<p class="card__qty">Menos de 5</p>
+						<p class="card__extras">
+							Extra: Computadora, Cámara, Parlantes, Proyector/Pizarra, Sala de
+							Reunión Privada
+						</p>
+						<div class="tags">
+							<span class="card__hour red-card">10:00 HS</span>
+							<span class="card__date violet-card">10/10/2022</span>
+						</div>
+					</div>
+					<div class="card__right">
+						<i class="fa-solid fa-envelope"></i>
+						<i class="fa-solid fa-phone-flip"></i>
+						<img
+							src="./assets/img/lupa.png"
+							class="card__img lupa-img"
+							alt=""
+						/>
+					</div>
+				</div> -->
+			</div>
+		</main>
+		<script src="./assets/utils.js"></script>
+		<script src="./assets/validation.js"></script>
+		<script src="./assets/main.js"></script>
+	</body>
+</html>

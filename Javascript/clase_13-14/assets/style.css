@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #000;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --primary: #4f46e5;
+  --error: #b91c1c;
+  --gray: #6b7280;
+  --white: #fff;
+  --red-card: #ff005c;
+  --violet-card: #4c1d95;
+  --black-card: #181818;
+}
+
+.red-card {
+  background-color: var(--red-card);
+}
+.violet-card {
+  background-color: var(--violet-card);
+}
+.black-card {
+  background-color: var(--black-card);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.left__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  position: sticky;
+  top: 50px;
+}
+
+.left__text {
+  margin-bottom: 20px;
+}
+
+.left__text h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.left__text p {
+  max-width: 450px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__inputs,
+.form__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.form__top,
+.form__mid,
+.form__bot {
+  display: flex;
+  gap: 20px;
+}
+
+/* small {
+  color: var(--error);
+} */
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.form__field.error input {
+  border: 1px solid #dc3545;
+}
+
+.form__field small {
+  color: var(--error);
+  max-width: 350px;
+  text-align: center;
+  padding: 7px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="tel"] {
+  border: 1px solid var(--white);
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  width: 250px;
+  color: #6b7280;
+}
+
+#message {
+  width: 100%;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.message span {
+  color: var(--gray);
+}
+
+button[type="submit"] {
+  background-color: var(--primary);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  align-self: flex-end;
+  margin-top: 15px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Checkbox Custom */
+.custom__label {
+  display: grid;
+  grid-template-columns: 16px auto;
+  gap: 12px;
+}
+
+[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--white);
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+}
+
+[type="checkbox"]::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  transition: all 0.1s ease-in-out;
+}
+
+[type="checkbox"]:checked::before {
+  content: "\f00c";
+  color: var(--white);
+  text-align: center;
+  font-family: FontAwesome;
+  background-color: var(--primary);
+  line-height: 20px;
+}
+
+/* Radio Custom */
+
+.mid__container {
+  background-color: white;
+  width: 1px;
+  height: 85vh;
+  position: sticky;
+  top: 50px;
+}
+
+.right__container {
+  height: 100%;
+  width: 600px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card__left {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card__title {
+  font-size: 20px;
+}
+
+.card__qty,
+.card__extras {
+  color: rgb(206, 206, 206);
+}
+
+.card__extras {
+  max-width: 90%;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+}
+.card__hour,
+.card__date {
+  padding: 5px 15px;
+  border-radius: 80px;
+  text-align: center;
+}
+
+.card__right {
+  display: flex;
+  gap: 20px;
+}
+
+.card__right a {
+  color: var(--white);
+}
+
+.card__right i:hover {
+  color: rgba(255, 255, 255, 0.699);
+  transition: all 0.2s ease;
+}
+
+.card__right i {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card__img {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.lupa-img {
+  right: -15px;
+  bottom: -35px;
+}
+
+.laptop-img {
+  right: -25px;
+  bottom: -50px;
+}
+
+.server-img {
+  right: -15px;
+  bottom: -35px;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #000 inset !important;
+  -webkit-text-fill-color: #6b7280 !important;
+}
