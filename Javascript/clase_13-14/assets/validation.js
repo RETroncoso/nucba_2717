@@ -23,7 +23,7 @@ const checkTextInput = (input) => {
 const checkMail = () => {
 	let valid = false;
 	const emailValue = emailInput.value.trim();
-	if (isEmpty(emailInput)) {
+	if (isEmpty(emailValue)) {
 		showError(emailInput, "* El mail es obligatorio");
 	} else if (!isEmailValid(emailValue)) {
 		showError(emailInput, "* El email no es válido");
@@ -53,11 +53,23 @@ const checkDate = () => {
 
 	const dateValue = dateInput.value;
 
-	if ("fecha no valida") {
-		("muestro un error");
+	if (!isValidDate(dateValue)) {
+		showError(dateInput, "* La fecha ingresada no es válida");
 	} else {
-		("borro error");
-		("paso valid a true");
+		clearError(dateInput);
+		valid = true;
 	}
-	("retorno true");
+	return valid;
+};
+
+const isValidForm = () => {
+	const isValidName = checkTextInput(nameInput);
+	const isValidSurname = checkTextInput(surnameInput);
+	const isValidPhone = checkPhone();
+	const isValidEmail = checkMail();
+	const isValidDate = checkDate();
+
+	return (
+		isValidName && isValidSurname && isValidPhone && isValidEmail && isValidDate
+	);
 };
