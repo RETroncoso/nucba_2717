@@ -1,0 +1,266 @@
+/* Agregamos el scroll behavior smooth para que sea mas suave la navegacion */
+/* scroll padding top para cuando apreta en el link tambien tome en cuenta la altura del navbar
+ y no nos tape parte de la seccion*/
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+}
+
+/*Header*/
+/*Para efecto de glassmorphismo cuando abrimos menú hamburguesa y carrito*/
+
+/*GLASMORPHISM:
+  Básicamente, el concepto principal de esta tendencia es poner un fondo semitransparente que
+  añade un difuminado al fondo del div en el que se aplique. En este caso, lo usamos para que al abrir el menú
+  hamburguesa y el carrito lo demás de la página se vea borroso abajo de este div de clase overlay.
+  */
+
+.overlay {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1; /*Para que quede por encima del resto de las cosas*/
+
+  /*Efecto de Glassmorphismo*/
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: none;
+}
+
+/*Toggle para el overlay (para que funcione unicamente cuando abrimos carrito o menu hamburguesa.
+  Aclarar que funciona porque son elementos hermanos y overlay esta debajo de los dos inputs en el código.*/
+.show-overlay {
+  display: block;
+}
+
+/*Hover de los elementos "a" del navbar*/
+.navbar-list li {
+  position: relative;
+  padding: 0;
+}
+
+.navbar-list li a::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: var(--text-white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.15s ease;
+}
+
+.navbar-list li a:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+/*CARRITO */
+/*Despues de cambiar el carrito en el html y en styles.css , aplicamos una animación en hover*/
+.cart-icon {
+  transition: all 0.2s ease-out;
+}
+
+.cart-icon:hover {
+  color: var(--electric);
+  border-color: var(--electric);
+  transition: all 0.2s ease-in;
+}
+
+/*Botones del carrito*/
+.quantity-handler {
+  transition: all 0.2s ease-in;
+}
+
+.quantity-handler:hover {
+  cursor: pointer;
+  background-color: var(--electric);
+  transition: all 0.2s ease-in;
+}
+
+/*Botones comprar(carrito) y add(producto) y BENUCBER(Hero)*/
+.btn-add,
+.hero-info a {
+  transition: all 0.2s ease-out;
+}
+
+.btn-add:hover,
+.hero-info a:hover {
+  background-color: var(--fire);
+  transition: all 0.2s ease-in;
+}
+
+/* Boton ver mas de la sección de productos */
+.btn-load {
+  transition: all 0.2s ease-out;
+  font-weight: 600;
+}
+
+.btn-load:hover {
+  background-color: var(--electric);
+  color: var(--text-white);
+  transition: all 0.2s ease-in;
+}
+/* Animaciones */
+/* Vamos a hacer animaciones de entrada a los elementos del hero y la seccion 2 (Las de la sección dos son
+  por si la página se ve en una pantalla grande)*/
+
+/* Animacion fade */
+/*Funcionamiento: pasa de opacidad 0 a opacidad 1*/
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animacion slide arriba */
+/*Funcionamiento: Hacemos llegar al elemento animado desde abajo*/
+@keyframes slide-up {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Animacion slide derecha */
+/*Funcionamiento: Hacemos llegar al elemento animado desde la derecha*/
+
+@keyframes slide-right {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Animacion al h1 */
+.hero-info h1 {
+  /*animacion - duración - animation-function*/
+  animation: fade 1s ease-in, slide-up 1.3s ease-in-out;
+}
+
+/* Animacion al p */
+.hero-info p {
+  opacity: 0;
+  /*animacion - duración - animation-function - forwards para que quede fijo al final.*/
+  animation: fade 0.8s ease-in forwards, slide-up 0.9s ease-in-out;
+  animation-delay: 0.3s;
+}
+
+/* Animacion al boton */
+.hero-info a {
+  opacity: 0;
+  /*animacion - duración - animation-function - forwards para que quede fijo al final.*/
+  animation: fade 0.8s ease-in forwards, slide-up 0.9s ease-in-out;
+  animation-delay: 0.4s;
+}
+
+/* Animacion a la card del hero */
+.hero-card {
+  opacity: 0;
+  /*animacion - duración - animation-function - forwards para que quede fijo al final.*/
+  animation: fade 1s ease-in forwards, slide-right 1.3s ease-in-out;
+  animation-delay: 0.2s;
+}
+
+/* Animacion Seccion 2 */
+#info h2 {
+  opacity: 0;
+  /*animacion - duración - animation-function - forwards para que quede fijo al final.*/
+  animation: fade 0.8s ease-in forwards, slide-up 0.9s ease-in-out;
+  animation-delay: 0.4s;
+}
+
+/* Animacion cards seccion 2 */
+.info-card {
+  opacity: 0;
+  /*animacion - duración - animation-function - forwards para que quede fijo al final.*/
+  animation: fade 0.8s ease-in forwards, slide-up 1.3s ease-in-out;
+}
+
+/*Aplicamos un delay a las cards para que aparezcan en distintos momentos.*/
+.info-card:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.info-card:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.info-card:nth-child(3) {
+  animation-delay: 1s;
+}
+
+/*Microinteracción para las imagenes de las cards de productos*/
+.product img {
+  transition: all 0.3s linear;
+}
+
+.product img:hover {
+  transform: scale(1.02);
+  transition: all 0.3s linear;
+}
+
+/* Animacion typing */
+/*Para la barrita de escritura ( efecto de titilar)*/
+@keyframes blink {
+  to {
+    background: transparent;
+    opacity: 0;
+  }
+}
+
+/*Para que vaya entrando el texto*/
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+/*Le agregamos al span de la palabra crypto un position para acomodar el before y el after
+  Además, le ponemos los mismos estilos que tiene el h1 correspondientes al color de la letra para que los tome*/
+.hero-info h1 span {
+  position: relative;
+  background: linear-gradient(to top, #30cfd0, #c43ad6);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+/*Creamos y posicionamos el before y el after. Recordar que sin la propiedad content el before y after no funcionan*/
+.hero-info h1 span::before,
+.hero-info h1 span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/*Esto es para que las letras vayan apareciendo de a poco
+  Los steps tienen que coincidir con la cantidad de letras de la palabra crypto en este caso.*/
+.hero-info h1 span::before {
+  background-color: var(--background);
+  /*animacion - duración - delay - animation-function - forwards para que se quede en el final*/
+  animation: typewriter 1.2s 1.4s steps(6) forwards;
+}
+
+/*Esto es para la barrita de escritura y que la misma se vaya moviendo junto con las letras que aparecen.*/
+.hero-info h1 span::after {
+  width: 0.1rem;
+  background: linear-gradient(to top, #30cfd0, #c43ad6);
+  animation: typewriter 1.2s 1.4s steps(6) forwards,
+    blink 0.8s steps(6) infinite;
+}

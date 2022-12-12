@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NFT Landing</title>
+  <!-- AGREGAMOS FAVICON (HACERLO AL FINAL DE LA CLASE) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicons/favicon-16x16.png" />
+  <!-- AGREGAMOS PSEUDOELEMENTOS.CSS -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="stylesheet" href="./assets/mediaqueries.css" />
+  <link rel="stylesheet" href="./assets/animaciones.css" />
+  <!-- AGREGAMOS CDN DE FONT-AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <img src="./assets/img/logo.png" alt="Logo de Nucba NFT" class="logo" />
+    <nav class="navbar">
+      <div class="menu-label">
+        <img src="./assets/img/menu.png" alt="" class="menu-icon" />
+      </div>
+
+
+
+      <ul class="navbar-list">
+        <li><a class="navbar-link" href="#hero">Home</a></li>
+        <li><a class="navbar-link" href="#discover">Descubre</a></li>
+        <li><a class="navbar-link" href="#products">BTC</a></li>
+
+
+        <li>
+          <a href="https://www.youtube.com/c/Nucbaok" target="_blank">Youtube</a>
+        </li>
+        <li>
+          <a href="https://nucba.com.ar/" target="_blank">Conocenos</a>
+        </li>
+      </ul>
+
+      <div class="cart-label">
+
+        <i class="fa-solid fa-cart-shopping cart-icon">
+          <div class="cart-bubble">0</div>
+        </i>
+      </div>
+
+
+      <div class="cart">
+
+        <h2>Tus NFTs</h2>
+
+
+        <div class="cart-container">
+
+        </div>
+
+        <span class="divider"></span>
+
+        <div class="cart-total">
+          <p>Total:</p>
+          <span class="total">18.3 ETH</span>
+        </div>
+        <button class="btn-buy">Comprar</button>
+        <button class="btn-delete">Vaciar carrito</button>
+      </div>
+
+      <div class="overlay"></div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section id="hero">
+      <div class="hero-info">
+        <h1>Descubre la nueva era de <span>Crypto</span></h1>
+        <p>
+          NUCBA NFT es el primer Marketplace educativo tecnológico de NFT, que
+          son elementos digitales épicos que realmente puedes poseer. Los
+          elementos digitales existen desde hace mucho tiempo, pero
+          <span>Nucba</span> como este.
+        </p>
+        <a href="#info">Be Nucber</a>
+      </div>
+      <div class="hero-card">
+        <img src="./assets/img/hero/hero-card.png" alt="BTC de ejemplo" />
+        <div class="hero-card-info">
+          <div class="hero-card-top">
+            <h3>"The Greatest of All Time"</h3>
+            <span>10</span>
+          </div>
+          <div class="hero-card-bottom">
+            <div class="hero-card-creator">
+              <img src="./assets/img/hero/creator.png" alt="Imagen de Carles Rexach" />
+              <div class="creator-info">
+                <p>Creador</p>
+                <p>Carles Rexach</p>
+              </div>
+            </div>
+            <div class="hero-card-price">
+              <p>Value</p>
+              <span>9 ETH</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- info -->
+    <section id="info">
+      <h2>Crea, Aprende Y Comparte Los NFTs</h2>
+      <div class="info-cards-container">
+        <div class="info-card">
+          <img src="./assets/img/info/info-icon.png" alt="Icono NFTs" />
+          <h3>Configura tu Wallet</h3>
+          <p>
+            Una vez que haya configurado la billetera de su elección,
+            conéctela a OpenSea.
+          </p>
+        </div>
+        <div class="info-card">
+          <img src="./assets/img/info/info-icon.png" alt="Icono NFTs" />
+          <h3>Agregá tus NFTs</h3>
+          <p>
+            Una vez que haya configurado la billetera de su elección, busca
+            los NFT de NUCBA y adquiere los que más te gusten.
+          </p>
+        </div>
+        <div class="info-card">
+          <img src="./assets/img/info/info-icon.png" alt="Icono NFTs" />
+          <h3>¡Coleccionalos!</h3>
+          <p>
+            A partir de ahora, formás parte de la comunidad de NUCBA NFT y vas
+            a poder acceder a contenidos educativos exclusivos sobre el mundo
+            crypto.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- discover -->
+    <section id="discover">
+      <!-- discover info text -->
+      <div class="discover-info">
+        <h2>Descubre una nueva era de colecciones</h2>
+        <div class="discover-text">
+          <p>
+            Tendras la oportunidad de coleccionar NFTs sobre distintos
+            tópicos, y de este modo acceder a beneficios exclusivos por tomar
+            parte de dicho club. Ej: "Team Star Wars"
+          </p>
+          <a href="#">Empezar ahora</a>
+        </div>
+      </div>
+
+      <!-- discover cards -->
+      <div class="discover-cards">
+        <img src="./assets/img/discover/darth-vader.png" alt="darth vader" />
+        <img src="./assets/img/discover/trooper.png" alt="trooper" />
+        <img src="./assets/img/discover/yoda.png" alt="yoda" />
+      </div>
+    </section>
+    <!-- products -->
+    <section id="products">
+      <h2>Hot NFTs</h2>
+      <!-- categories -->
+      <div class="categories">
+        <button class="category active">🎨Todas</button>
+        <button class="category" data-category="futbol">⚽Futbol</button>
+        <button class="category" data-category="musica">🎷Música</button>
+        <button class="category" data-category="peliculas">🎬Películas</button>
+        <button class="category" data-category="autos">🏎️Autos</button>
+        <button class="category" data-category="politicos">️💼Políticos</button>
+      </div>
+
+      <!-- products -->
+      <div class="products-container">
+
+      </div>
+      <button class="btn-load">Ver Más</button>
+    </section>
+  </main>
+  <footer>
+    <div>
+      <ul class="footer-links">
+        <li><a href="#">Términos de Uso</a></li>
+        <li><a href="#">Trabajá con Nosotros</a></li>
+        <li><a href="#">Soporte</a></li>
+      </ul>
+    </div>
+    <p>Hecho con ❤️ en <span>NUCBACRYPTO</span></p>
+  </footer>
+  <div class="add-modal"></div>
+  <script src="./assets/data.js"></script>
+  <script src="./assets/index.js"></script>
+</body>
+
+</html>
