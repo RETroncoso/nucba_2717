@@ -29,6 +29,8 @@ const successModal = document.querySelector(".add-modal");
 //  Modal de agregado al carrito.
 const deleteBtn = document.querySelector(".btn-delete");
 
+console.dir(deleteBtn);
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const saveLocalStorage = (cartList) => {
