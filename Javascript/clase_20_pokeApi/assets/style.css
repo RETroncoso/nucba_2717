@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #252525;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 50px;
+}
+
+.pokemon-logo {
+  width: 25%;
+}
+
+.poke__container {
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.poke {
+  background: #404244;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.poke h2 {
+  font-size: 1.3rem;
+  margin-top: 0.4rem;
+  color: #181818;
+}
+
+.poke .exp {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.id-poke {
+  position: absolute;
+  top: 4rem;
+  font-size: 5.5rem;
+  color: #363636;
+  font-weight: 800;
+  z-index: 1;
+}
+
+.poke img {
+  z-index: 2;
+  width: 150px;
+}
+
+.poke__type {
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+.tipo-poke {
+  margin: 10px 0;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.height,
+.weight {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #1e1e1e;
+  letter-spacing: 2px;
+}
+
+/* tipos */
+.normal {
+  background-color: #aa9;
+}
+
+.fire {
+  background-color: #f42;
+}
+
+.grass {
+  background-color: #7c5;
+}
+
+.poison {
+  background-color: #a59;
+}
+
+.water {
+  background-color: #39f;
+}
+
+.electric {
+  background-color: #fc3;
+}
+
+.ice {
+  background-color: #6cf;
+}
+
+.fighting {
+  background-color: #b54;
+}
+
+.ground {
+  background-color: #db5;
+}
+
+.flying {
+  background-color: #89f;
+}
+
+.psychic {
+  background-color: #f59;
+}
+
+.bug {
+  background-color: #ab2;
+}
+
+.rock {
+  background-color: #ba6;
+}
+
+.ghost {
+  background-color: #66b;
+}
+
+.dragon {
+  background-color: #76e;
+}
+
+.dark {
+  background-color: rgb(7, 3, 1);
+}
+
+.steel {
+  background-color: #aab;
+}
+
+.fairy {
+  background-color: #e9e;
+}
+
+.pokeballs-container {
+  display: flex;
+  gap: 20px;
+  visibility: hidden;
+}
+.pokeball {
+  height: 48px;
+  -webkit-animation: vibrate-1 0.3s linear infinite both,
+    colorizer 0.3s linear both;
+  animation: vibrate-1 0.3s linear infinite both;
+}
+
+.show {
+  visibility: visible;
+}
+
+/*https://animista.net/play/attention/vibrate*/
+
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
