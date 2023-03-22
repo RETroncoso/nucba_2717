@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+		/>
+		<title>Nucflix</title>
+	</head>
+
+	<body>
+		<div class="banner">
+			<h1>
+				NUCBA+
+				<img
+					src="https://static.typecdn.com/854254c9-1b48-4245-a950-d3f73ebc520c_logo-nucba_png.png"
+					alt="logo"
+					class="logo"
+				/>
+			</h1>
+			<p>Una experiencia audiovisual sin limites 🎬</p>
+		</div>
+		<div class="filter-container">
+			<button class="btn btn--active" data-filter="TRENDING">TRENDING</button>
+			<button class="btn" data-filter="TOPRATED">TOP RATED</button>
+			<button class="btn" data-filter="UPCOMING">UPCOMING</button>
+		</div>
+		<div class="cards-container">
+			<!-- HOLA RODRI DEL FUTURO, ACA EMPIEZA EL CARD DE EJEMPLO -->
+			<div class="card">
+				<img
+					loading="lazy"
+					src="./assets/img/placeholder.png"
+					alt="pelicula"
+					class="card-img"
+				/>
+				<div class="card-popularity">75% de popularidad</div>
+				<div class="card-content">
+					<h2>Campeones del mundo</h2>
+					<p>Fecha de estreno: 18/12/2022</p>
+				</div>
+			</div>
+			<!-- HOLA RODRI DEL FUTURO, ACA TERMINA EL CARD DE EJEMPLO -->
+		</div>
+		<div class="pagination">
+			<div class="left">
+				<i class="fa-solid fa-chevron-left"></i>
+			</div>
+			<div class="pages">
+				<button class="page-number active">0</button>
+			</div>
+			<div class="right"><i class="fa-solid fa-chevron-right"></i></div>
+		</div>
+
+		<script src="./assets/request.js"></script>
+		<script src="./assets/main.js"></script>
+	</body>
+</html>
