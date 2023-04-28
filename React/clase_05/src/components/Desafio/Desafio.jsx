@@ -22,7 +22,7 @@ const Desafio = () => {
   return (
     <>
         <span>{counter}</span>
-        <ClickButton onClick={stopIncrement} >Stop</ClickButton>
+        <ClickButton estadito={counter} onClick={stopIncrement} >Stop</ClickButton>
     </>
   )
 }
