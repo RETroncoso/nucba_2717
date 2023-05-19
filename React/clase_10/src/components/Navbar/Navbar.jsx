@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { logoURL } from '../../data/productsData';
 import { NavLink, useNavigate } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext';
 
 
 const NavbarContainer = styled.header`
@@ -39,6 +40,7 @@ const NavLinkStyled = styled(NavLink)`
 
 const Navbar = () => {
 
+  const {isAuth, user} = useContext(AuthContext);
   const navigate = useNavigate();
   
   return (
@@ -52,7 +54,10 @@ const Navbar = () => {
       <LinkContainer>
         <NavLinkStyled to="/" >Home</NavLinkStyled>
         <NavLinkStyled to="/products" >Products</NavLinkStyled>
-        <NavLinkStyled to="/login" >Login</NavLinkStyled>
+        {/* <NavLinkStyled to="/login" >Login</NavLinkStyled> */}
+        <NavLinkStyled to={isAuth ? `/usuario/${user}` : 'login'} >
+          {isAuth ? "Perfil" : "Login"}
+        </NavLinkStyled>
       </LinkContainer>
     </NavbarContainer>
   );

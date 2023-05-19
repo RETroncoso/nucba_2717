@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import { Card } from '../Products/Products';
+import { useNavigate } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import AuthContext from '../../context/AuthContext';
 
 const LoginForm = styled.form`
   display: flex;
@@ -36,6 +39,17 @@ const LoginContainer = styled.div`
 `;
 
 export const Login = () => {
+
+  const {isAuth, form, handleSubmit, handleChange} = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate("/")
+    }
+  }, [isAuth]);
+
   return (
     <LoginContainer>
       <Card>
@@ -49,16 +63,18 @@ export const Login = () => {
             placeholder='Username'
             id='username'
             name='username'
-
+            value={form.username}
+            onChange={(e) => handleChange(e)}
           />
           <input
             type='password'
             placeholder='Password'
             id='password'
             name='password'
-
+            value={form.password}
+            onChange={(e) => handleChange(e)}
           />
-          <Button type='submit'>
+          <Button type='submit' onClick={(e) => handleSubmit(e)}>
             Login
           </Button>
         </LoginForm>
