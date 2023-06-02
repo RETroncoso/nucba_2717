@@ -22,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     color: white;
     -webkit-tap-highlight-color: transparent;
-    overflow-x: hidden
+    overflow-x: hidden;
     }
 
     a {
