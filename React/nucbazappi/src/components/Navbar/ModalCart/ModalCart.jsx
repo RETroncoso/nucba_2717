@@ -25,15 +25,26 @@ import {
   TotalStyled,
 } from './ModalCartStyles';
 import { ModalOverlayStyled } from '../NavbarStyles';
+import { useDispatch, useSelector } from 'react-redux';
+import { clearCart, toggleHiddenCart } from '../../../redux/cart/cartSlice';
 
-const ModalCart = ({ hiddenCart, setHiddenCart }) => {
+const ModalCart = () => {
+  const hiddenCart = useSelector(state => state.cart.hidden)
+  const {cartItems, shippingCost} = useSelector(state => state.cart);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
+  const totalPrice = cartItems.reduce((acc, item) =>{
+    return (acc += item.price * item.quantity)
+  }, 0)
 
   return (
     <>
       {!hiddenCart && (
         <ModalOverlayStyled
-          onClick={() => setHiddenCart(!hiddenCart)}
+          onClick={() => dispatch(toggleHiddenCart())}
           isHidden={hiddenCart}
         />
       )}
@@ -50,7 +61,7 @@ const ModalCart = ({ hiddenCart, setHiddenCart }) => {
               <CloseButtonStyled
                 className='close__modal '
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setHiddenCart(!hiddenCart)}
+                onClick={() => dispatch(toggleHiddenCart())}
               >
                 <MdOutlineClose size='24px' />
               </CloseButtonStyled>
@@ -60,35 +71,48 @@ const ModalCart = ({ hiddenCart, setHiddenCart }) => {
               <TitleStyled>
                 <h1>Tus Productos</h1>
                 <Increase
-                  onClick={e => e.preventDefault()}
+                  onClick={() => dispatch(clearCart())}
                   bgColor='var(--magenta)'
-                  disabled='true'
+                  disabled={!cartItems.length}
                 >
                   <IoMdTrash />
                 </Increase>
               </TitleStyled>
 
               <ProductsWrapperStyled>
-                <ModalCartCard />
+              {
+                cartItems.length ? (
+                  cartItems.map((item) => {
+                    return <ModalCartCard {...item} key={item.id} />
+                  })
+                ) : (
+                  <p>No seas amarrete, comprá algo.</p>
+                )
+              }
               </ProductsWrapperStyled>
             </MainContainerStyled>
 
             <PriceContainerStyled>
               <SubtotalStyled>
                 <p>Subtotal:</p>
-                <span>{formatPrice(9000)}</span>
+                <span>{formatPrice(totalPrice)}</span>
               </SubtotalStyled>
               <EnvioStyled>
                 <p>Envio</p>
-                <span>{formatPrice(500)}</span>
+                <span>{formatPrice(shippingCost)}</span>
               </EnvioStyled>
               <hr />
               <TotalStyled>
                 <p>Total:</p>
-                <PriceStyled>{formatPrice(9000 + 500)}</PriceStyled>
+                <PriceStyled>{formatPrice(totalPrice + shippingCost)}</PriceStyled>
               </TotalStyled>
               <ButtonContainerStyled>
-                <Submit onClick={() => navigate('/checkout')}>
+                <Submit onClick={() => {
+                  navigate('/checkout');
+                  dispatch(toggleHiddenCart())
+                  }}
+                  disabled={!cartItems.length}
+                  >
                   Iniciar pedido
                 </Submit>
               </ButtonContainerStyled>

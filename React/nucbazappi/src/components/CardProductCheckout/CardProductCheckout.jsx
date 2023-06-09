@@ -2,6 +2,7 @@ import { formatPrice } from '../../utils';
 
 import { BsPlusLg } from 'react-icons/bs';
 import { FaMinus } from 'react-icons/fa';
+import { IoMdTrash } from 'react-icons/io';
 
 import Count from '../UI/Count/Count';
 import Increase from '../UI/Increase/Increase';
@@ -14,28 +15,33 @@ import {
   TextStyled,
   QuantityContainerStyled,
 } from './CardProductCheckoutStyles';
+import { useDispatch } from 'react-redux';
+import { addToCart, removeFromCart } from '../../redux/cart/cartSlice';
 
-const CardProductCheckout = () => {
+const CardProductCheckout = ({img, title, desc, price, id, quantity}) => {
+
+  const dispatch = useDispatch();
+
   return (
     <CardContainerStyled>
       <img
-        src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648456/coding/NucbaZappi/Productos/muzza-mentolada_fmh9at.png'
-        alt='La Aco'
+        src={img}
+        alt={title}
       />
       <CardInfoStyled>
-        <ProductTitleStyled>La Aco</ProductTitleStyled>
-        <TextStyled>Cheta la gorra</TextStyled>
-        <PriceStyled>{formatPrice(3000)}</PriceStyled>
+        <ProductTitleStyled>{title}</ProductTitleStyled>
+        <TextStyled>{desc}</TextStyled>
+        <PriceStyled>{formatPrice(price)}</PriceStyled>
       </CardInfoStyled>
       <QuantityContainerStyled>
         <Increase
           bgColor='var(--btn-gradient-secondary)'
-          onClick={e => e.preventDefault()}
+          onClick={() => dispatch(removeFromCart(id))}
         >
-          <FaMinus />
+          {quantity === 1 ? <IoMdTrash/> : <FaMinus />}
         </Increase>
-        <Count>{3}</Count>
-        <Increase onClick={e => e.preventDefault()}>
+        <Count>{quantity}</Count>
+        <Increase onClick={() => dispatch(addToCart({img, title, desc, price, id, quantity}))}>
           <BsPlusLg />
         </Increase>
       </QuantityContainerStyled>
