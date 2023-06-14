@@ -7,7 +7,7 @@ export const ModalContainerStyled = styled(motion.div)`
   background-color: var(--gray-bg);
   box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
   width: 450px;
-  top: 100px;
+  top: calc(100px + 2rem);
   right: 0;
   z-index: 98;
   border-radius: 1rem 0 0 1rem;

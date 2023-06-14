@@ -7,9 +7,13 @@ import {
   ModalContainerStyled,
   UsernameStyled,
 } from './ModelUserStyles';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrentUser, toggleMenuHidden } from '../../../redux/user/userSlice';
 
 const ModalUser = () => {
-  const [hiddenMenu, setHiddenMenu] = useState(true);
+  const {currentUser, hiddenMenu} = useSelector(state => state.user)
+
+  const dispatch = useDispatch();
 
   return (
     <AnimatePresence>
@@ -24,7 +28,10 @@ const ModalUser = () => {
           <UsernameStyled>Pepito</UsernameStyled>
           <HrStyled />
           <LinkStyled to='/mis-ordenes'>Mis Ordenes</LinkStyled>
-          <span onClick={() => setHiddenMenu(!hiddenMenu)}>Cerrar Sesion</span>
+          <span onClick={() => {
+            dispatch(setCurrentUser(null))
+            dispatch(toggleMenuHidden())
+          }}>Cerrar Sesion</span>
         </ModalContainerStyled>
       )}
     </AnimatePresence>
