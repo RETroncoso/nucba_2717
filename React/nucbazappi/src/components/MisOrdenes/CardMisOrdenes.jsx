@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { formatPrice, formatDate } from '../../utils';
 import OrderStatus from '../UI/OrderStatus/OrderStatus';
 
@@ -9,15 +10,18 @@ import {
   TitleStyled,
 } from './CardMisOrdenesStyles';
 
-const CardMisOrdenes = () => {
+const CardMisOrdenes = ({createdAt, status, total, _id}) => {
+
+  const navigate = useNavigate();
+
   return (
-    <PedidoContainerStyled onClick={e => e.preventDefault()}>
+    <PedidoContainerStyled onClick={() => navigate(`/resumen/${_id}`)}>
       <TextContainerStyled>
-        <TitleStyled>ID de la orden: 0912</TitleStyled>
-        <IdStyled>Fecha {formatDate(new Date())}hs</IdStyled>
-        <PriceStyled>{formatPrice(3000)}</PriceStyled>
+        <TitleStyled>ID de la orden: {_id.slice(0, 7)}</TitleStyled>
+        <IdStyled>Fecha {formatDate(createdAt)}hs</IdStyled>
+        <PriceStyled>{formatPrice(total)}</PriceStyled>
       </TextContainerStyled>
-      <OrderStatus status='pending' />
+      <OrderStatus status={status} />
     </PedidoContainerStyled>
   );
 };

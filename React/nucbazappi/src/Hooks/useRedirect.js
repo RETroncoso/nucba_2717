@@ -10,7 +10,7 @@ const useRedirect = (redirectTo) => {
     if (currentUser) {
       navigate(redirectTo);
     }
-  }, [currentUser, redirectTo]);
+  }, [currentUser, redirectTo, navigate]);
 };
 
 export default useRedirect;
