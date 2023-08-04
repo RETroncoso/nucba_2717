@@ -4,6 +4,14 @@ export const Contexto = createContext();
 
 export const ContextoProvider  = ({children}) => {
 
+    // return (
+    //     <Contexto.Provider
+    //         value={{color: 'crimson', titulo: "Este titulo está en mi contexto"}}
+    //     >
+    //         {children}
+    //     </Contexto.Provider>
+    // )
+
     const initialState = {
         data:"",
         loading: true,
