@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { register } from "../controllers/auth";
+import { login, register, verifyUser } from "../controllers/auth";
 import {check} from "express-validator"
 import { recolectarErrores } from "../middlewares/recolectarErrores";
 import { existeEmail } from "../helpers/validacionesDB";
@@ -18,6 +18,30 @@ router.post(
         recolectarErrores
     ],
     register
+);
+
+router.post(
+    "/login",
+    [
+        check("email", "El mail es obligatorio").not().isEmpty(),
+        check("email", "El mail no es válido").isEmail(),
+        check("password", "El password debe ser de 6 caracteres minimo").isLength({
+            min: 6
+        }),
+        recolectarErrores
+    ],
+    login
+);
+
+router.patch(
+    "/verify",
+    [
+        check("email", "El mail es obligatorio").not().isEmpty(),
+        check("email", "El mail no es válido").isEmail(),
+        check("code").not().isEmpty(),
+        recolectarErrores
+    ],
+    verifyUser
 )
 
 
