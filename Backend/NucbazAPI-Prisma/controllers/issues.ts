@@ -1,10 +1,13 @@
 import { Request, Response } from "express";
-import Issue, { IIssue } from "../models/issue";
+import Issue, { IIssue, IPrismaIssue } from "../models/issue";
 import { ObjectId } from "mongoose";
+import { prisma } from "../app";
 
 export const postNewIssue = async (req: Request, res: Response) => {
-    const {title, description, priority}: IIssue = req.body;
-    const usuarioId: ObjectId = req.body.usuarioConfirmado._id;
+    const {title, description, priority}: IPrismaIssue = req.body;
+    // const usuarioId: ObjectId = req.body.usuarioConfirmado._id;
+
+    const usuarioId: number = req.body.usuarioConfirmado.id;
 
     const issueData = {
         title,
@@ -14,9 +17,15 @@ export const postNewIssue = async (req: Request, res: Response) => {
         user: usuarioId
     };
 
-    const issue = new Issue(issueData);
+    // const issue = new Issue(issueData);
 
-    await issue.save();
+    // await issue.save();
+
+    const issue = await prisma.issue.create({
+        data: {
+            ...issueData
+        }
+    })
 
     res.status(201).json({
         issue

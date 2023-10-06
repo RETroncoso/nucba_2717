@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express"
 
 import jwt, { JwtPayload } from "jsonwebtoken"
 import Usuario, { IUser } from "../models/usuario";
+import { prisma } from "../app";
 
 const validarJWT = async (req: Request, res: Response, next: NextFunction) => {
 
@@ -20,7 +21,13 @@ const validarJWT = async (req: Request, res: Response, next: NextFunction) => {
 
         const {id} = payload;
 
-        const usuarioConfirmado: IUser | null = await Usuario.findById(id);
+        // const usuarioConfirmado: IUser | null = await Usuario.findById(id);
+
+        const usuarioConfirmado = await prisma.user.findUnique({
+            where: {
+                id: id
+            }
+        })
 
         if (!usuarioConfirmado) {
             res.status(404).json({

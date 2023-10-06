@@ -8,6 +8,14 @@ export interface IIssue {
     createdAt: Date
 };
 
+export interface IPrismaIssue {
+    title: string;
+    description: string;
+    priority: number;
+    user: number;
+    createdAt: Date
+};
+
 const IssueSchema = new Schema<IIssue>({
     title: {
         type: String,

@@ -6,6 +6,12 @@ interface IShippingDetails {
     location: String;
     address: String;
 }
+interface IPrismaShippingDetails {
+    name: string;
+    cellphone: string;
+    location: string;
+    address: string;
+}
 
 interface IItem {
     desc: String;
@@ -13,6 +19,14 @@ interface IItem {
     price: Number;
     quantity: Number;
     title: String;
+}
+interface IPrismaItem {
+    desc: string;
+    id: number;
+    price: number;
+    quantity: number;
+    title: string;
+    img: string
 }
 
 export interface IOrder {
@@ -24,6 +38,17 @@ export interface IOrder {
     shippingDetails: IShippingDetails;
     status: String;
     total: Number
+};
+
+export interface IPrismaOrder {
+    createdAt: Date;
+    user: number;
+    price: number;
+    shippingCost: number;
+    items: IPrismaItem[];
+    shippingDetails: IPrismaShippingDetails;
+    status: string;
+    total: number
 };
 
 const OrderSchema = new Schema<IOrder>({
